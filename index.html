@@ -1,0 +1,515 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jonathan Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" type="image/png" href="images/icondb.png" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<img src="images/foto.png" class="custom-icon">
+							<!-- <span class="icon fa-gem"></span> -->
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>PORTFOLIO DE JONATHAN</h1>
+								<p>Analista de datos con experiencia en Excel y SQL</p>
+								<p>Dashboards en Power BI</p>
+								<p><a href="https://github.com/jdmavod?tab=projects">PROYECTOS EN GITHUB / GITHUB PROJECTS</a></p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#intro">SOBRE MI</a></li>
+								<li><a href="#work">SQL</a></li>
+								<li><a href="#about">POWER BI</a></li>
+								<li><a href="#contact">CONTACTO</a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Intro -->
+							<article id="intro" style="text-align: justify;">
+								<h2 class="major">SOBRE MI</h2>
+								<span class="image main"><img src="images/aboutme.png" alt="" /></span>
+								<p>Hola, mi nombre es Jonathan Mavo, graduado en Ingenieria de Sistemas y laborando como IT Support en estos ultimos 8 años. Siempre me he mantenido enfocado 
+									la resolucion de problemas tanto a nivel de software como hardware y por supuesto, muy a gusto con la tecnologia y mas cuando podemos ver lo mucho que hemos evolucionado
+									en los ultimos años saliendo del COVID-19. </p>
+									
+								<p>Finalizando el año 2024 y empezando el 2025 observe que el mundo tecnologico esta inundado de muchas herramientas y como no puede estar mas claro, me refiero obvio a toda inteligencia
+									artificial que encontramos en el mercado actualmente. Aunque esto nos permite a todos aprender desde lo mas basico hasta expandir nuestros conocimientos mas profundos, soy partidario
+									(como deberiamos todos) de que ninguna IA reemplazara el talento humano.
+								
+								</p>Hace un año me propuse una meta y fue la de aplicar mi carrera y conocimientos en programacion en el area de analis de datos, ya que llevo casi una decada resolviendo problemas
+								en IT mayormente a nivel de sistemas, servidores y respaldos, por lo que este camino me llevo hasta <strong><a href="#work">mi primer proyecto</a></strong> sobre Limpieza de datos y Analisis exploratorio de datos
+								en donde trabaje con un dataset sobre los despidos alrededor del mundo debido al COVID-19 estandarizando distintas columnas para luego tomar nota de algunos insight tomando en cuenta los resultados
+								obtenidos de una tabla ya limpia mediante consultas realizadas a esta misma.</p>
+							</article>
+
+						<!-- Work -->
+							<article id="work" style="text-align: justify;">
+								<h2 class="major">World Layoffs 2020-2023</h2>
+								<span class="image main"><img src="images/sqlproject.jpg" alt="" /></span>
+															
+								<p>Usando este dataset como primer proyecto se eligio desarrollar varias metricas de despidos alrededor del mundo a partir del año 2020 hasta principios del 2023. En este 
+									sentido se establecieron algunos objetivos referentes a la limpieza de los datos y distintas preguntas que responder en un analisis exploratorio. La idea final de este
+									proyecto seria crear un dashboard para presentar todos los insights o resultados obtenidos. <span class="image main"><img src="images/sqlproject1.png" alt="" />
+									<em class="caption">Verificando que el dataset se importo correctamente</em></span></p>
+								
+								<p>Tomando en cuenta estos objetivos se empezo entonces a indagar en este proyecto. El objetivo inicial se trataba de buscar, verificar y eliminar duplicados, esto se hizo
+									mediante un duplicado de la tabla original ya que en muchas situaciones de la vida cotidiana, nuestra tabla origen siempre se encuentra operativa y este proyecto al ser parte
+									de un dataset ya creado lo trabajamos como tal, entonces, luego de crear este duplicado se empezaron a realizar distintas verificaciones. Ejemplo fue usar un CTE donde se asigna
+									un ROW_NUMBER a cada fila para posteriormente, si encontraba un duplicado, verificar si ese duplicado en realidad posee alguna columna con datos distintos o si una columna 
+									verificada tenia al menos un dato igual. <span class="image main"><img src="images/sqlproject2.png" alt="" /> <em class="caption">Creando un CTE</em></span></p>
+								
+								<p>Como ejemplo obtuvimos que la compañia llamada "Casper" mostraba resultados duplicados, al verificar nos damos cuenta de que de los 3 registros obtenidos, tenemos 2
+									que son duplicados mostrando exactamente la misma informacion. <span class="image main"><img src="images/sqlproject3.png" alt="" /> <em class="caption">Verificando los
+									registros duplicados</em></span></p>
+
+								</p>Procedi entonces, basandome en este resutaldo a crear una segunda tabla con los mismos datos agregando la columna "row_number" para realizar un DELETE leyendo los 
+									distintos campos y comparandolos entre ellos y asi completar el primer objetivo de este proyecto. Luego de cumplir con la limpieza de los duplicados se pudo estandarizar todos
+									los datos dentro de este segundo duplicado para mantener un orden en como se presentan los resultados ya sea con toda la columna utilizando un mismo formato, una misma 
+									abrevacion o eliminando caracateres sobrantes e innecesarios. <span class="image main"><img src="images/sqlproject4.png" alt="" /><em class="caption">Estandarizando registros
+									y cambiando la columna 'fecha' de tipo string a date</em></span></p>
+
+								<p>Para cumplir con este objetivo se realizaron varias consultas en distintas columnas de la tabla observando todos esos pequeñas diferencias de caracteres, espacios, signos de
+									puntacion y demas. Como se observa en la imagen anterior se realizaron algunos TRIM en distintas columnas, una de estas fue en la columna "country" donde se mostraba que
+									el pais "United States" devolvia como resultado dos registros uno indicando "United States" y otro "United States.", fueron todas esas pequeñas diferencias las que se fueron
+									optimizando en el camino. De igual manera en este momento de la limpieza note que la columna FECHA era del tipo STRING, al momento de trabajar con esta columna seria mas
+									util manejarla como columna de tipo 'date' por lo que se cambio con un STR_TO_DATE.</p>
+								
+								<p>Siguiendo con los objetivos de este proyecto, el tercero de estos fue arreglar los espacios vaios y nulos dentro dataset. Para realizarlo de la manera mas optima posible
+									en primer lugar se realizo un JOIN de la misma tabla duplicada para verificar que espacios estaban vacios, nulos y como se podia proceder para actualizarlos, se decidio entonces
+									luego de obtener los resutlados que se realizaria un UPDATE junto a un JOIN de la misma tabla tomando en cuenta el campo "company" que le ponia como condicion actualizarlos
+									en campos vacios/nulos. Antes de realizar esto me di cuenta que priemro debia indicar que los campos vacios debian ser iguales a nulos para que el UPDATE no tuviera
+									problemas eligiendo entre las dos condiciones que eran vacios y nulos y solo eligiera campos nulos para mayor comodidad<span class="image main"><img src="images/sqlproject5.png" alt="" />
+									<em class="caption">La compañia Bally's Interactive no cumplio con ninguna condicion y fue el unico registro que no fue afectado por este UPDATE</em></span></p>
+								
+								<p>Con los primeros tres objetivos cumplidos habia llegado el momento de los toques finales, eliminar columnas innecesarias para el Analisis Exploratorio que se 
+									realizaria mas adelante y verificar que todo estuviera correcto en el dataset. Para este objetivo decidi eliminar las columnas "total_laid_off" "percentage_laid_off" y una de 
+									las primeras columnas creadas en este proyecto la cual fue "row_number", las razones de cada una fueron las siguientes:</p>
+
+								<p><strong>total_laid_off y percentage_laid_off:</strong> Si por alguna razon este dataset se utilizaba para crear un daskboard, la cantidad de datos nulos en ambas columnas no seria una fuente
+									confiable de datos ya que la cantidad de registros nulos era considerable, lo que se consideraria como datos redundantes, sin nungna funcion.</p>
+								
+								<p><strong>row_number:</strong> Esta columna fue creada al inicio de este proyecto con la unica intencion de cumplir con algunos queries, por ende, se consideraba innecesaria para cualquier uso
+									futuro. <span class="image main"><img src="images/sqlproject7.png" alt="" /><em class="caption">Se realizo un SELECT ordenado por el campo fecha de manera ascendente para
+									verificar todos los datos y dar por finalizado esta parte del proyecto.</em></p>
+
+								<h2 class="major">EDA </h2>
+								<span class="image main"><img src="images/sqlproject8.png" alt="" /><em class="caption">Exploratory Data Analysis</em></span>
+
+								<p>Al momento de finalizar la limpieza de datos pude empezar a responder algunas dudas sobre toda esta informacion, estas preguntas iban desde saber cuales fueron las empresas 
+									que despidieron a la totalidad de su plantilla o que porcentaje representaban los despidos en algunos casos. Y claro que para esto seria mejor utilizar los resultados obtendos
+									de las tablas usando los datos ya ordenados, limpios y estandarizados para desarrollar hipotesis o insights basadas en los mismos.</p>
+								
+								<p><span class="image main"><img src="images/sqlproject9.png" alt="" /><em class="caption">1.- Impacto general de los despidos</em></p>
+								<p><strong>Hallazgos:</strong>
+								<ul>
+									<li><strong> Maximo historico de despidos: </strong> hubo casos extremos de empresas que despidieron 100% de su personal, incluso algunas que habían recaudado millones
+										de dólares antes del colapso.</li>
+									<li><strong> Periodo critico: </strong>Los despidos se concentraron entre 2020 y 2023, coincidiendo con la pandemia de COVID-19 y sus secuelas económicas.</li>
+								</ul>
+								<blockquote>Durante la pandemia, algunas empresas cerraron por completo, a pesar de haber recibido grandes inversiones. Esto sugiere que incluso negocios bien financiados
+									no pudieron resistir los efectos económicos del COVID-19</blockquote></p>
+
+								<p><span class="image main"><img src="images/sqlproject10.png" alt="" /><em class="caption">2.- Industrias mas afectadas por el COVID</em></p>
+								<p><strong>Hallazgos:</strong>
+								<ul>
+									<li><strong> Industrias críticas: </strong> Las más impactadas fueron Consumo, Retail y Transporte.</li>
+									<li><strong> Empresas líderes en despidos: </strong>Algunas compañías aparecen recurrentemente en el top anual, lo que indica problemas estructurales o sectores en crisis.</li>
+								</ul>
+								<blockquote>Sectores que dependen del contacto directo con las personas, como tiendas físicas o transporte, fueron los más golpeados. Además, ciertas empresas tuvieron que
+									reducir personal varias veces en distintos años, lo que podría señalar dificultades prolongadas</blockquote></p>
+
+								<p><span class="image main"><img src="images/sqlproject11.png" alt="" /><em class="caption">3.- Impacto Geográfico</em></p>
+								<p><strong>Hallazgos:</strong>
+								<ul>
+									<li><strong> Paises mas afectados: </strong> stados Unidos lidera en número total de despidos, seguido de países europeos como Alemania y Reino Unido.</li>
+									<li><strong> Etapa de la empresa: </strong>Las empresas en etapa Post-IPO (ya cotizando en bolsa) tuvieron más despidos que startups en etapas tempranas.</li>
+								</ul>
+								<blockquote>Los despidos fueron más frecuentes en empresas establecidas (no startups) y en países con economías grandes pero altamente competitivas, donde ajustar
+									costos fue clave para sobrevivir</blockquote></p>		
+
+								<p><span class="image main"><img src="images/sqlproject12.png" alt="" /><em class="caption">4.- Tendencias temporales</em></p>
+								<p><strong>Hallazgos:</strong>
+								<ul>
+									<li><strong> Pico de despidos: </strong> El mes con mayor número de despidos fue Marzo de 2020, seguido de olas menores en 2022 y 2023.</li>
+									<li><strong> Acumulación progresiva: </strong>La suma acumulada de despidos creció un 48% entre 2020 y 2023, mostrando un efecto prolongado de la pandemia.</li>
+								</ul>
+								<blockquote>El primer impacto fuerte fue al inicio del COVID-19, pero los despidos continuaron en los años siguientes, como si fuera una 'ola expansiva' de la crisis inicial</blockquote></p>
+
+								<p><span class="image main"><img src="images/sqlproject13.png" alt="" /><em class="caption">5- Relación entre Financiamiento y Despidos</em></p>
+								<p><strong>Hallazgos:</strong>
+								<ul>
+									<li><strong> Paradoja de fondos recaudados:: </strong> Algunas empresas que despidieron al 100% de su personal habían recaudado más de $500 millones</li>
+									<li><strong> Correlación no directa:: </strong>No hay una relación clara entre el monto recaudado y la cantidad de despidos; empresas con menos fondos también sobrevivieron.</li>
+								</ul>
+								<blockquote>Inyectar dinero no siempre salva a una empresa. Algunas que recibieron grandes inversiones terminaron cerrando, mientras que otras con menos recursos 
+									lograron adaptarse</blockquote></p>
+
+								<p>En ultimo lugar luego de presentar todos estos insights di por terminado este corto pero excelente proyecto, considerado por muchas personas como algo diario del Analista 
+									datos, fue un punto de partida excelente para empezar en este mundo de analiticas y desarrollar y mejorar habilidades que sabia que tenia pero que faltaba la practica
+									y aprendizaje de nuevas tareas.</p>
+								
+								<p>Este proyecto de SQL inicial finalizo con las conclusiones realizadas anteriormente, si deseas ver otro proyecto realizado por mi te recomiendo dirigirte al area de 
+									<strong><a href="#about">Power BI</a></strong>, donde explico los hallazgos claves encontrados mediante la viasualizacion de un dashboard.</p>
+							</article>
+
+						<!-- About -->
+							<article id="about" style="text-align: justify;">
+								<h2 class="major">DASHBOARD EN POWER BI</h2>
+								<span class="image main"><img src="images/main.png" alt="" /></span>
+
+								<p>Este informe resume los hallazgos clave de una encuesta realizada a 630 profesionales de datos, con el objetivo de comprender mejor sus salarios, preferencias de lenguajes
+									de programación, percepción de la dificultad para ingresar al campo, y niveles de satisfacción laboral.</p>
+								
+								<p><strong>1. Salario Promedio por Puesto</strong>
+									<ul>
+										<li>El puesto de "Data Scientist" lidera con el salario promedio más alto, seguido por "Data Engineer" y "Data Architect".</li>
+										<li>Los puestos de nivel inicial como "Database Developer" y "Student/Looking for a job" presentan los salarios más bajos.</li>
+									</ul>
+									<blockquote>El liderazgo salarial de los "Data Scientists" refleja la alta demanda y especialización en este rol, mientras que la disparidad salarial subraya la necesidad 
+										de estrategias para atraer y retener talento en roles de menor remuneración.</blockquote></p>
+								
+								<p><strong>2. Países de los Encuestados:</strong>
+									<ul>
+										<li>La mayoría de los encuestados residen en Estados Unidos, lo que podría influir en los resultados debido a sesgos culturales y del mercado laboral.</li>
+									</ul>
+									<blockquote>La predominancia de encuestados de EE.UU. introduce un sesgo cultural y de mercado que requiere consideración al generalizar los resultados, destacando la\
+										 importancia de diversificar la muestra en futuras encuestas.</blockquote></p>
+								
+								<p><strong>3. Lenguajes de Programación Favoritos:</strong>
+									<ul>
+										<li>Python es el lenguaje dominante, lo que resalta su importancia en la ciencia de datos.</li>
+										<li>Otros lenguajes como R, C/C++, JavaScript y Java tienen una presencia menor.</li>
+									</ul>
+									<blockquote>La clara preferencia por Python confirma su rol como herramienta esencial en el análisis de datos, lo que implica que los programas de formación deben priorizar
+										 su enseñanza para satisfacer la demanda laboral.</blockquote></p>
+
+								<p><strong>4.Datos Demográficos:</strong>
+									<ul>
+										<li>La edad promedio de los encuestados es de 30 años.</li>
+										<li>La cantidad de personas encuestadas es de 630.</li>
+										<li>La satisfacción con el equilibrio trabajo/vida es moderada (5.74/10).</li>
+										<li>La satisfacción con el salario es relativamente baja (4.27/10), lo que sugiere posibles problemas de retención.</li>
+										<li>La percepción de dificultad es variada, con una proporción significativa de encuestados que la consideran "Ni fácil ni difícil" o "Difícil".</li>
+									</ul>
+									<blockquote>La baja satisfacción salarial y moderada satisfacción con el equilibrio trabajo/vida, indica la necesidad de que las empresas, revisen sus politicas 
+										salariales y de conciliacion de vida laboral y personal. La percepción de dificultad resalta la necesidad de mejorar el acceso al campo mediante programas de formación y 
+										mentoría, para así poder cerrar la brecha entre la demanda y la oferta de profesionales.</blockquote></p>
+								
+								<p></p>
+							</article>
+
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">CONTACTO</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Nombre...</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Correo electronico</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Mensaje</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Enviar" class="primary" /></li>
+									</ul>
+								</form>
+								<ul class="icons">
+									<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
+									<li><a href="https://www.linkedin.com/in/jdmavod/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/jdmavod" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article>
+
+						<!-- Elements -->
+							<article id="elements">
+								<h2 class="major">Elements</h2>
+
+								<section>
+									<h3 class="major">Text</h3>
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+									<hr />
+									<h2>Heading Level 2</h2>
+									<h3>Heading Level 3</h3>
+									<h4>Heading Level 4</h4>
+									<h5>Heading Level 5</h5>
+									<h6>Heading Level 6</h6>
+									<hr />
+									<h4>Blockquote</h4>
+									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+									<h4>Preformatted</h4>
+									<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+								</section>
+
+								<section>
+									<h3 class="major">Lists</h3>
+
+									<h4>Unordered</h4>
+									<ul>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Alternate</h4>
+									<ul class="alt">
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Ordered</h4>
+									<ol>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis viverra.</li>
+										<li>Felis enim feugiat.</li>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis lorem.</li>
+										<li>Felis enim et feugiat.</li>
+									</ol>
+									<h4>Icons</h4>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+									</ul>
+
+									<h4>Actions</h4>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions stacked">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Table</h3>
+									<h4>Default</h4>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+
+									<h4>Alternate</h4>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</section>
+
+								<section>
+									<h3 class="major">Buttons</h3>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Primary</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button">Default</a></li>
+										<li><a href="#" class="button small">Small</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+									</ul>
+									<ul class="actions">
+										<li><span class="button primary disabled">Disabled</span></li>
+										<li><span class="button disabled">Disabled</span></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Form</h3>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="demo-name">Name</label>
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
+											</div>
+											<div class="field half">
+												<label for="demo-email">Email</label>
+												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
+											</div>
+											<div class="field">
+												<label for="demo-category">Category</label>
+												<select name="demo-category" id="demo-category">
+													<option value="">-</option>
+													<option value="1">Manufacturing</option>
+													<option value="1">Shipping</option>
+													<option value="1">Administration</option>
+													<option value="1">Human Resources</option>
+												</select>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+												<label for="demo-priority-low">Low</label>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-high" name="demo-priority">
+												<label for="demo-priority-high">High</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-copy" name="demo-copy">
+												<label for="demo-copy">Email me a copy</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<label for="demo-human">Not a robot</label>
+											</div>
+											<div class="field">
+												<label for="demo-message">Message</label>
+												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</section>
+
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Creacion y diseño: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
