@@ -71,112 +71,115 @@
 
 						<!-- Work -->
 							<article id="work" style="text-align: justify;">
-								<h2 class="major">World Layoffs 2020-2023</h2>
-								<span class="image main"><img src="images/sqlproject.jpg" alt="" /></span>
+								<h3 class="major">Despidos mundiales entre los años 2020-2023</h3>
+								<span class="image main"><img src="images/sqlproject.jpg" alt="" /><em class="caption">Despidos internacionales en el mundo</em></span>
 															
-								<p>Usando este dataset como primer proyecto se eligio desarrollar varias metricas de despidos alrededor del mundo a partir del año 2020 hasta principios del 2023. En este 
-									sentido se establecieron algunos objetivos referentes a la limpieza de los datos y distintas preguntas que responder en un analisis exploratorio. La idea final de este
-									proyecto seria crear un dashboard para presentar todos los insights o resultados obtenidos. <span class="image main"><img src="images/sqlproject1.png" alt="" />
-									<em class="caption">Verificando que el dataset se importo correctamente</em></span></p>
+								<p>Usando este dataset como primer proyecto elegi indagar en varias metricas de despidos alrededor del mundo a partir del año 2020 hasta principios del 2023. En este 
+									sentido estableci algunos objetivos referentes a la limpieza de los datos y distintas preguntas para responder en un futuro analisis exploratorio. El objetivo de este
+									proyecto sobre limpieza de datos es crear un dashboard para presentar todos los insights o resultados obtenidos asi que debia tener todo este dataset estandarizado y limpio
+									para su uso en la construccion de la presentacion visual. <span class="image main"><img src="images/sqlproject1.png" alt="" /><em class="caption">Verificando que el dataset se 
+									importo correctamente</em></span></p>
 								
-								<p>Tomando en cuenta estos objetivos se empezo entonces a indagar en este proyecto. El objetivo inicial se trataba de buscar, verificar y eliminar duplicados, esto se hizo
-									mediante un duplicado de la tabla original ya que en muchas situaciones de la vida cotidiana, nuestra tabla origen siempre se encuentra operativa y este proyecto al ser parte
-									de un dataset ya creado lo trabajamos como tal, entonces, luego de crear este duplicado se empezaron a realizar distintas verificaciones. Ejemplo fue usar un CTE donde se asigna
-									un ROW_NUMBER a cada fila para posteriormente, si encontraba un duplicado, verificar si ese duplicado en realidad posee alguna columna con datos distintos o si una columna 
-									verificada tenia al menos un dato igual. <span class="image main"><img src="images/sqlproject2.png" alt="" /> <em class="caption">Creando un CTE</em></span></p>
+								<p>Tomando en cuenta estos objetivos empece entonces a indagar en este proyecto. El objetivo inicial se trataba de buscar, verificar y eliminar duplicados, hice esto mediante un 
+									duplicado de la tabla original ya que en muchas situaciones del dia a dia, nuestra tabla origen siempre se encuentra operativa y en uso por distintos usuarios en una
+									empresa, luego de crear este duplicado se empezaron a realizar distintas verificaciones. Ejemplo fue usar un CTE donde se asigna un ROW_NUMBER a cada fila para posteriormente, 
+									si encontraba un duplicado, verificar si ese duplicado en realidad posee alguna columna con datos distintos o si una columna verificada tenia al menos un dato igual. 
+									<span class="image main"><img src="images/sqlproject2.png" alt="" /> <em class="caption">Creando un CTE</em></span></p>
 								
-								<p>Como ejemplo obtuvimos que la compañia llamada "Casper" mostraba resultados duplicados, al verificar nos damos cuenta de que de los 3 registros obtenidos, tenemos 2
-									que son duplicados mostrando exactamente la misma informacion. <span class="image main"><img src="images/sqlproject3.png" alt="" /> <em class="caption">Verificando los
-									registros duplicados</em></span></p>
+								<p>Siguiendo con el CTE encontre que la compañia llamada "Casper" mostraba resultados duplicados, al verificar me di cuenta de que obtuve 3 registros y tenia 2 que son duplicados
+									mostrando exactamente la misma informacion. Para seguir con la limpieza de datos decidi dejar esta tabla duplicada y crear una tercera tabla que me permitia agregar cualquier
+									columna que necesitara y poder trabajar sin ningun limite de accion sobre estos datos. Al final del dia es mejor trabajar en un dataset espejo que el original para no causar
+									problemas a las base de datos.<span class="image main"><img src="images/sqlproject3.png" alt="" /> <em class="caption">Verificando los registros duplicados</em></span></p>
 
-								</p>Procedi entonces, basandome en este resutaldo a crear una segunda tabla con los mismos datos agregando la columna "row_number" para realizar un DELETE leyendo los 
+								</p>Basandome en este resutaldo decidi entonces crear una tercera tabla con los mismos datos agregando la columna "row_number" para realizar un DELETE leyendo los 
 									distintos campos y comparandolos entre ellos y asi completar el primer objetivo de este proyecto. Luego de cumplir con la limpieza de los duplicados se pudo estandarizar todos
-									los datos dentro de este segundo duplicado para mantener un orden en como se presentan los resultados ya sea con toda la columna utilizando un mismo formato, una misma 
+									los datos dentro de este tercer duplicado para mantener un orden en como se presentan los resultados ya sea con toda la columna utilizando un mismo formato, una misma 
 									abrevacion o eliminando caracateres sobrantes e innecesarios. <span class="image main"><img src="images/sqlproject4.png" alt="" /><em class="caption">Estandarizando registros
 									y cambiando la columna 'fecha' de tipo string a date</em></span></p>
 
-								<p>Para cumplir con este objetivo se realizaron varias consultas en distintas columnas de la tabla observando todos esos pequeñas diferencias de caracteres, espacios, signos de
+								<p>Para cumplir con este objetivo se realizaron varias consultas en distintas columnas de la tabla observando todos esas pequeñas diferencias de caracteres, espacios, signos de
 									puntacion y demas. Como se observa en la imagen anterior se realizaron algunos TRIM en distintas columnas, una de estas fue en la columna "country" donde se mostraba que
-									el pais "United States" devolvia como resultado dos registros uno indicando "United States" y otro "United States.", fueron todas esas pequeñas diferencias las que se fueron
-									optimizando en el camino. De igual manera en este momento de la limpieza note que la columna FECHA era del tipo STRING, al momento de trabajar con esta columna seria mas
-									util manejarla como columna de tipo 'date' por lo que se cambio con un STR_TO_DATE.</p>
+									el país "United States" devolvía como resultado dos registros, uno indicando "United States" y otro "United States.", fueron todas esas pequeñas diferencias las que se fueron
+									optimizando en el camino. De igual manera note que la columna FECHA era del tipo STRING, al momento de trabajar con esta columna seria mas util manejarla como columna de tipo 
+									'date' por lo que se cambio con un STR_TO_DATE.</p>
 								
-								<p>Siguiendo con los objetivos de este proyecto, el tercero de estos fue arreglar los espacios vaios y nulos dentro dataset. Para realizarlo de la manera mas optima posible
-									en primer lugar se realizo un JOIN de la misma tabla duplicada para verificar que espacios estaban vacios, nulos y como se podia proceder para actualizarlos, se decidio entonces
-									luego de obtener los resutlados que se realizaria un UPDATE junto a un JOIN de la misma tabla tomando en cuenta el campo "company" que le ponia como condicion actualizarlos
-									en campos vacios/nulos. Antes de realizar esto me di cuenta que priemro debia indicar que los campos vacios debian ser iguales a nulos para que el UPDATE no tuviera
-									problemas eligiendo entre las dos condiciones que eran vacios y nulos y solo eligiera campos nulos para mayor comodidad<span class="image main"><img src="images/sqlproject5.png" alt="" />
-									<em class="caption">La compañia Bally's Interactive no cumplio con ninguna condicion y fue el unico registro que no fue afectado por este UPDATE</em></span></p>
+								<p>Siguiendo con los objetivos de este proyecto, el tercero de estos fue arreglar los espacios vacíos y nulos dentro del dataset. Para realizarlo de la manera mas óptima posible
+									en primer lugar se realizó un SELF JOIN para verificar cuales espacios estaban vacíos o nulos y como se podía proceder para actualizarlos, se decidió entonces luego de obtener 
+									los resutlados que se realizaria un UPDATE junto a un JOIN tomando en cuenta el campo "company" que le ponía como condición actualizarlos en campos vacíos y nulos. Antes de 
+									realizar esto me di cuenta que priemro debia indicar que los campos vacíos debian ser iguales a nulos para que el UPDATE no tuviera problemas eligiendo entre las dos condiciones 
+									que eran vacios y nulos y solo eligiera campos nulos para mayor comodidad<span class="image main"><img src="images/sqlproject5.png" alt="" /><em class="caption">La compañia Bally's
+									Interactive no cumplio con ninguna condicion y fue el unico registro que no fue afectado por este UPDATE</em></span></p>
 								
-								<p>Con los primeros tres objetivos cumplidos habia llegado el momento de los toques finales, eliminar columnas innecesarias para el Analisis Exploratorio que se 
-									realizaria mas adelante y verificar que todo estuviera correcto en el dataset. Para este objetivo decidi eliminar las columnas "total_laid_off" "percentage_laid_off" y una de 
-									las primeras columnas creadas en este proyecto la cual fue "row_number", las razones de cada una fueron las siguientes:</p>
+								<p>En este punto los tres primeros objetivos de este proyecto ya se habian logrado asi que habia llegado el momento de los toques finales, eliminar columnas innecesarias para el 
+									Analisis Exploratorio que se realizaria mas adelante y verificar que todo estuviera correcto en el dataset. Para este objetivo final decidi eliminar las columnas "total_laid_off" 
+									"percentage_laid_off" y una de las primeras columnas creadas en este proyecto la cual fue "row_number", las razones de cada una fueron las siguientes:</p>
 
-								<p><strong>total_laid_off y percentage_laid_off:</strong> Si por alguna razon este dataset se utilizaba para crear un daskboard, la cantidad de datos nulos en ambas columnas no seria una fuente
-									confiable de datos ya que la cantidad de registros nulos era considerable, lo que se consideraria como datos redundantes, sin nungna funcion.</p>
+								<p><strong>total_laid_off y percentage_laid_off:</strong> Si por alguna razón este dataset se utilizaba para crear un dashboard, la cantidad de datos nulos en ambas columnas no seria
+									una fuente confiable de datos ya que la cantidad de registros nulos era grande, lo que se consideraría como datos redundantes sin ningun uso o funcion a cumplir a futuro.</p>
 								
-								<p><strong>row_number:</strong> Esta columna fue creada al inicio de este proyecto con la unica intencion de cumplir con algunos queries, por ende, se consideraba innecesaria para cualquier uso
-									futuro. <span class="image main"><img src="images/sqlproject7.png" alt="" /><em class="caption">Se realizo un SELECT ordenado por el campo fecha de manera ascendente para
-									verificar todos los datos y dar por finalizado esta parte del proyecto.</em></p>
+								<p><strong>row_number:</strong> Esta columna fue creada al inicio de este proyecto con la única intención de cumplir con algunos queries, por ende, se consideraba innecesaria para
+									cualquier uso futuro. <span class="image main"><img src="images/sqlproject7.png" alt="" /><em class="caption">Se realizo un SELECT ordenado por el campo fecha de manera ascendente
+									para verificar todos los datos y dar por finalizado esta parte del proyecto.</em></p>
 
-								<h2 class="major">EDA </h2>
+								<h3 class="major">Analisis de datos exploratorio</h3>
 								<span class="image main"><img src="images/sqlproject8.png" alt="" /><em class="caption">Exploratory Data Analysis</em></span>
 
-								<p>Al momento de finalizar la limpieza de datos pude empezar a responder algunas dudas sobre toda esta informacion, estas preguntas iban desde saber cuales fueron las empresas 
-									que despidieron a la totalidad de su plantilla o que porcentaje representaban los despidos en algunos casos. Y claro que para esto seria mejor utilizar los resultados obtendos
-									de las tablas usando los datos ya ordenados, limpios y estandarizados para desarrollar hipotesis o insights basadas en los mismos.</p>
+								<p>Al momento de finalizar la limpieza de datos empece a responder algunas dudas sobre toda esta información guardada en el dataset, estas preguntas iban desde saber cuales fueron
+									las empresas que despidieron a la totalidad de su plantilla o que porcentaje representaban los despidos en algunos casos y para esto seria mejor utilizar los resultados obtenidos
+									de las tablas usando los datos ya ordenados, limpios y estandarizados para desarrollar hipótesis o insights basadas en los mismos.</p>
 								
 								<p><span class="image main"><img src="images/sqlproject9.png" alt="" /><em class="caption">1.- Impacto general de los despidos</em></p>
 								<p><strong>Hallazgos:</strong>
 								<ul>
-									<li><strong> Maximo historico de despidos: </strong> hubo casos extremos de empresas que despidieron 100% de su personal, incluso algunas que habían recaudado millones
+									<li><strong> Máximo histórico de despidos: </strong>hubo casos extremos de empresas que despidieron al 100% de su personal, incluso algunas que habían recaudado millones
 										de dólares antes del colapso.</li>
-									<li><strong> Periodo critico: </strong>Los despidos se concentraron entre 2020 y 2023, coincidiendo con la pandemia de COVID-19 y sus secuelas económicas.</li>
+									<li><strong> Período crítico: </strong>los despidos se concentraron entre 2020 y 2023, coincidiendo con la pandemia de COVID-19 y sus secuelas económicas.</li>
 								</ul>
-								<blockquote>Durante la pandemia, algunas empresas cerraron por completo, a pesar de haber recibido grandes inversiones. Esto sugiere que incluso negocios bien financiados
-									no pudieron resistir los efectos económicos del COVID-19</blockquote></p>
+								<blockquote>Durante la pandemia, algunas empresas cerraron por completo a pesar de haber recibido grandes inversiones. Esto sugiere que incluso negocios bien financiados no pudieron
+									resistir los efectos económicos del COVID-19</blockquote></p>
 
 								<p><span class="image main"><img src="images/sqlproject10.png" alt="" /><em class="caption">2.- Industrias mas afectadas por el COVID</em></p>
 								<p><strong>Hallazgos:</strong>
 								<ul>
-									<li><strong> Industrias críticas: </strong> Las más impactadas fueron Consumo, Retail y Transporte.</li>
-									<li><strong> Empresas líderes en despidos: </strong>Algunas compañías aparecen recurrentemente en el top anual, lo que indica problemas estructurales o sectores en crisis.</li>
+									<li><strong> Industrias críticas: </strong>las más impactadas fueron las industrias de Consumo, Retail y Transporte.</li>
+									<li><strong> Empresas líderes en despidos: </strong>algunas compañías aparecen frecuentemente en el top anual, lo que indica problemas estructurales o sectores en crisis.</li>
 								</ul>
-								<blockquote>Sectores que dependen del contacto directo con las personas, como tiendas físicas o transporte, fueron los más golpeados. Además, ciertas empresas tuvieron que
+								<blockquote>Sectores que dependen del contacto directo con las personas como tiendas físicas o transporte, fueron los más golpeados. Además, ciertas empresas tuvieron que
 									reducir personal varias veces en distintos años, lo que podría señalar dificultades prolongadas</blockquote></p>
 
 								<p><span class="image main"><img src="images/sqlproject11.png" alt="" /><em class="caption">3.- Impacto Geográfico</em></p>
 								<p><strong>Hallazgos:</strong>
 								<ul>
-									<li><strong> Paises mas afectados: </strong> stados Unidos lidera en número total de despidos, seguido de países europeos como Alemania y Reino Unido.</li>
-									<li><strong> Etapa de la empresa: </strong>Las empresas en etapa Post-IPO (ya cotizando en bolsa) tuvieron más despidos que startups en etapas tempranas.</li>
+									<li><strong> Países mas afectados: </strong>Estados Unidos lidera en número total de despidos, seguido de países europeos como Alemania y Reino Unido.</li>
+									<li><strong> Etapa de la empresa: </strong>las empresas en etapa Post-IPO (ya cotizando en la bolsa de valores) tuvieron más despidos que startups en etapas tempranas.</li>
 								</ul>
-								<blockquote>Los despidos fueron más frecuentes en empresas establecidas (no startups) y en países con economías grandes pero altamente competitivas, donde ajustar
-									costos fue clave para sobrevivir</blockquote></p>		
+								<blockquote>Los despidos fueron más frecuentes en empresas establecidas y en países con economías grandes pero altamente competitivas, donde ajustar costos fue clave para sobrevivir</blockquote></p>		
 
 								<p><span class="image main"><img src="images/sqlproject12.png" alt="" /><em class="caption">4.- Tendencias temporales</em></p>
 								<p><strong>Hallazgos:</strong>
 								<ul>
-									<li><strong> Pico de despidos: </strong> El mes con mayor número de despidos fue Marzo de 2020, seguido de olas menores en 2022 y 2023.</li>
-									<li><strong> Acumulación progresiva: </strong>La suma acumulada de despidos creció un 48% entre 2020 y 2023, mostrando un efecto prolongado de la pandemia.</li>
+									<li><strong> Pico de despidos: </strong>el mes con mayor número de despidos fue Marzo de 2020, seguido de olas menores en 2022 y 2023.</li>
+									<li><strong> Acumulación progresiva: </strong>la suma acumulada de despidos creció un 48% entre 2020 y 2023, mostrando un efecto prolongado de la pandemia.</li>
 								</ul>
-								<blockquote>El primer impacto fuerte fue al inicio del COVID-19, pero los despidos continuaron en los años siguientes, como si fuera una 'ola expansiva' de la crisis inicial</blockquote></p>
+								<blockquote>El primer impacto fuerte fue al inicio del COVID-19 pero los despidos continuaron en los años siguientes, como si fuera una 'ola expansiva' de la crisis inicial</blockquote></p>
 
 								<p><span class="image main"><img src="images/sqlproject13.png" alt="" /><em class="caption">5- Relación entre Financiamiento y Despidos</em></p>
 								<p><strong>Hallazgos:</strong>
 								<ul>
-									<li><strong> Paradoja de fondos recaudados:: </strong> Algunas empresas que despidieron al 100% de su personal habían recaudado más de $500 millones</li>
-									<li><strong> Correlación no directa:: </strong>No hay una relación clara entre el monto recaudado y la cantidad de despidos; empresas con menos fondos también sobrevivieron.</li>
+									<li><strong> Paradoja de fondos recaudados:: </strong>algunas empresas que despidieron al 100% de su personal habían recaudado más de $500 millones</li>
+									<li><strong> Correlación no directa: </strong>no hay una relación clara entre el monto recaudado y la cantidad de despidos; empresas con menos fondos también sobrevivieron.</li>
 								</ul>
-								<blockquote>Inyectar dinero no siempre salva a una empresa. Algunas que recibieron grandes inversiones terminaron cerrando, mientras que otras con menos recursos 
+								<blockquote>Inyectar dinero no siempre salva a una empresa. Algunas de estas que recibieron grandes inversiones terminaron cerrando, mientras que otras con menos recursos 
 									lograron adaptarse</blockquote></p>
 
-								<p>En ultimo lugar luego de presentar todos estos insights di por terminado este corto pero excelente proyecto, considerado por muchas personas como algo diario del Analista 
-									datos, fue un punto de partida excelente para empezar en este mundo de analiticas y desarrollar y mejorar habilidades que sabia que tenia pero que faltaba la practica
-									y aprendizaje de nuevas tareas.</p>
+								<p>En último lugar luego de presentar todos estos insights di por terminado este corto y excelente proyecto, considerado por algunas personas como algo diario del Analista 
+									de datos, fue un punto de partida excelente para empezar en este mundo de analiticas y mejorar las habilidades que sabia que tenia pero que necesitaban de la practica
+									en nuevas tareas y procesos.</p>
 								
-								<p>Este proyecto de SQL inicial finalizo con las conclusiones realizadas anteriormente, si deseas ver otro proyecto realizado por mi te recomiendo dirigirte al area de 
-									<strong><a href="#about">Power BI</a></strong>, donde explico los hallazgos claves encontrados mediante la viasualizacion de un dashboard.</p>
+								<p>Este proyecto de SQL inicial finalizó con las conclusiones realizadas anteriormente, si deseas ver otro proyecto realizado por mi te recomiendo dirigirte al área de 
+									<strong><a href="#about">Power BI</a></strong>, donde explico los hallazgos claves encontrados en un dashboard básico basandome en una encuensta realizada a personas que
+									respondieron a esta durante todo el año 2024, en la misma se les hizo preguntas sobre país de origen, puesto actual de trabajo, salario actual y niveles de satisfaccion
+									con su sueldo y relación vida/trabajo.</p>
 							</article>
 
 						<!-- About -->
