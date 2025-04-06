@@ -50,23 +50,23 @@
 							<article id="intro" style="text-align: justify;">
 								<h2 class="major">SOBRE MI</h2>
 								<span class="image main"><img src="images/aboutme.png" alt="" /></span>
-								<p>Hola, mi nombre es Jonathan Mavo, obtuve mi titulo en Ingenieria de Sistemas en el 2017 y he estado laborando como IT Support en estos ultimos 5 años. Siempre me he mantenido 
+								<p>Hola, mi nombre es Jonathan Mavo, obtuve mi titulo en Ingenieria de Sistemas y he estado laborando como IT Support desde el 2020. Siempre me he mantenido 
 									enfocado la resolucion de problemas tanto a nivel de software como hardware y siempre me he sentido muy a gusto con la tecnologia, con ganas constantes de aprender y de siempre 
-									desarrollar	mis conocimientos a niveles extremos para aplicarlos en mi dia a dia.</p>
+									desarrollar mis conocimientos hasta niveles optimos para aplicarlos en mi dia a dia.</p>
 									
-								<p>En los ultimos 2 años se ha observado un desarrollo gigante en el sector de la inteligencia artificial y podemos ver que el internet esta inundado con una IA para cada actividad,
-									lo que nos permite a todos mejorara en el dia a dia abriendo puertas a todas las personas. Esto nos ha permitido a todos aprender desde lo mas basico de algo que no conocemos
+								<p>En los ultimos 2 años se ha observado un gran desarrollo en el sector de la inteligencia artificial y podemos ver que el internet esta inundado con una IA para cada actividad,
+									lo que nos permite a todos mejorar en el dia a dia abriendo puertas a todas las personas. Esto nos ha permitido a todos aprender desde lo mas basico de algo que no conocemos
 									hasta indagar en lo mas profundo de nuestros conocimientos. Mucha gente en la actualidad piensa que la IA nos quitara el trabajo, nuestros puestos, nuestra vida diaria para ser
-									resuelta en un prompt y la verdad es que nunca se podra reemplazar la humanidad dentro de nosotros, siempre hara falta nuestro sentido humano para la vida.</p>
+									resuelta en un prompt y la verdad es que nunca se podra reemplazar nuestra humanidad.</p>
 								
-								<p>Para mi este 2025 representa un año de avance, un camino de desarrollo para mis conocomientos y mi carrera, me siento entusiasmado y estoy muy enfocado en lograr 
-									conseguir un lugar que me permita ser de ayuda. Actualmente estoy concentrado en vaciar mis chabilidades en el campo de analisis de datos o data analytics. Afortunadamente
-									durante mis años de laburo al trabajar como IT Support me ha permitido resolver problemas buscando la fuente, pensando en un plan de accion e implementarlo para obtener
+								<p>Para mi este 2025 representa un año de avance, un camino de desarrollo para mis conocomientos y mi carrera, me siento entusiasmado y estoy enfocado en lograr 
+									conseguir un lugar que me permita ser de ayuda. Actualmente estoy concentrado en aplicar mis habilidades en el campo de analisis de datos. Afortunadamente
+									durante mis años de laburo como IT Support me ha permitido resolver problemas buscando la fuente, pensando en un plan de accion e implementarlo para obtener
 									resultados efectivos, siento que todo esto de verdad me ayudara en este camino del Analisis de Datos.</p> 
 								
 								<p>La decision de elegir esta carrera me llevo a realizar <strong><a href="#work">mi primer proyecto</a></strong> sobre Limpieza de datos y Analisis exploratorio de datos
 									en donde trabaje con un dataset sobre los despidos alrededor del mundo debido al COVID-19 estandarizando distintas columnas para luego tomar nota de algunos insight tomando 
-									en cuenta los resultados obtenidos de una tabla ya limpia mediante consultas realizadas a esta misma.</p>
+									en cuenta los resultados obtenidos de una tabla ya limpia mediante consultas realizadas utilizando distintos queries y subqueries.</p>
 							</article>
 
 						<!-- Work -->
@@ -76,8 +76,7 @@
 															
 								<p>Usando este dataset como primer proyecto elegi indagar en varias metricas de despidos alrededor del mundo a partir del año 2020 hasta principios del 2023. En este 
 									sentido estableci algunos objetivos referentes a la limpieza de los datos y distintas preguntas para responder en un futuro analisis exploratorio. El objetivo de este
-									proyecto sobre limpieza de datos es crear un dashboard para presentar todos los insights o resultados obtenidos asi que debia tener todo este dataset estandarizado y limpio
-									para su uso en la construccion de la presentacion visual. <span class="image main"><img src="images/sqlproject1.png" alt="" /><em class="caption">Verificando que el dataset se 
+									proyecto es limpiar los datos y realizar un analisis de datos exploratorio al final con los resultados limpios y estandarizados. <span class="image main"><img src="images/sqlproject1.png" alt="" /><em class="caption">Verificando que el dataset se 
 									importo correctamente</em></span></p>
 								
 								<p>Tomando en cuenta estos objetivos empece entonces a indagar en este proyecto. El objetivo inicial se trataba de buscar, verificar y eliminar duplicados, hice esto mediante un 
@@ -88,8 +87,7 @@
 								
 								<p>Siguiendo con el CTE encontre que la compañia llamada "Casper" mostraba resultados duplicados, al verificar me di cuenta de que obtuve 3 registros y tenia 2 que son duplicados
 									mostrando exactamente la misma informacion. Para seguir con la limpieza de datos decidi dejar esta tabla duplicada y crear una tercera tabla que me permitia agregar cualquier
-									columna que necesitara y poder trabajar sin ningun limite de accion sobre estos datos. Al final del dia es mejor trabajar en un dataset espejo que el original para no causar
-									problemas a las base de datos.<span class="image main"><img src="images/sqlproject3.png" alt="" /> <em class="caption">Verificando los registros duplicados</em></span></p>
+									columna que necesitara y poder trabajar sin ningun limite de accion sobre estos datos.<span class="image main"><img src="images/sqlproject3.png" alt="" /> <em class="caption">Verificando los registros duplicados</em></span></p>
 
 								</p>Basandome en este resutaldo decidi entonces crear una tercera tabla con los mismos datos agregando la columna "row_number" para realizar un DELETE leyendo los 
 									distintos campos y comparandolos entre ellos y asi completar el primer objetivo de este proyecto. Luego de cumplir con la limpieza de los duplicados se pudo estandarizar todos
@@ -103,19 +101,19 @@
 									optimizando en el camino. De igual manera note que la columna FECHA era del tipo STRING, al momento de trabajar con esta columna seria mas util manejarla como columna de tipo 
 									'date' por lo que se cambio con un STR_TO_DATE.</p>
 								
-								<p>Siguiendo con los objetivos de este proyecto, el tercero de estos fue arreglar los espacios vacíos y nulos dentro del dataset. Para realizarlo de la manera mas óptima posible
+								<p>Segui entonces con el tercer objetivo de arreglar los espacios vacíos y nulos dentro del dataset, para realizar esto de la manera mas óptima posible
 									en primer lugar se realizó un SELF JOIN para verificar cuales espacios estaban vacíos o nulos y como se podía proceder para actualizarlos, se decidió entonces luego de obtener 
 									los resutlados que se realizaria un UPDATE junto a un JOIN tomando en cuenta el campo "company" que le ponía como condición actualizarlos en campos vacíos y nulos. Antes de 
-									realizar esto me di cuenta que priemro debia indicar que los campos vacíos debian ser iguales a nulos para que el UPDATE no tuviera problemas eligiendo entre las dos condiciones 
+									realizar esto me di cuenta que primero debia indicar que los campos vacíos debian ser iguales a nulos para que el UPDATE no tuviera problemas eligiendo entre las dos condiciones 
 									que eran vacios y nulos y solo eligiera campos nulos para mayor comodidad<span class="image main"><img src="images/sqlproject5.png" alt="" /><em class="caption">La compañia Bally's
 									Interactive no cumplio con ninguna condicion y fue el unico registro que no fue afectado por este UPDATE</em></span></p>
 								
 								<p>En este punto los tres primeros objetivos de este proyecto ya se habian logrado asi que habia llegado el momento de los toques finales, eliminar columnas innecesarias para el 
 									Analisis Exploratorio que se realizaria mas adelante y verificar que todo estuviera correcto en el dataset. Para este objetivo final decidi eliminar las columnas "total_laid_off" 
-									"percentage_laid_off" y una de las primeras columnas creadas en este proyecto la cual fue "row_number", las razones de cada una fueron las siguientes:</p>
+									"percentage_laid_off" y una de las primeras columnas creadas en este proyecto la cual fue "row_number", las razones de eliminar cada una de estas columnas fueron las siguientes:</p>
 
 								<p><strong>total_laid_off y percentage_laid_off:</strong> Si por alguna razón este dataset se utilizaba para crear un dashboard, la cantidad de datos nulos en ambas columnas no seria
-									una fuente confiable de datos ya que la cantidad de registros nulos era grande, lo que se consideraría como datos redundantes sin ningun uso o funcion a cumplir a futuro.</p>
+									una fuente confiable de datos ya que la cantidad estas dos columnas eran muy grande, lo que se consideraría como datos redundantes sin ningun uso o funcion a cumplir a futuro.</p>
 								
 								<p><strong>row_number:</strong> Esta columna fue creada al inicio de este proyecto con la única intención de cumplir con algunos queries, por ende, se consideraba innecesaria para
 									cualquier uso futuro. <span class="image main"><img src="images/sqlproject7.png" alt="" /><em class="caption">Se realizo un SELECT ordenado por el campo fecha de manera ascendente
@@ -136,7 +134,7 @@
 									<li><strong> Período crítico: </strong>los despidos se concentraron entre 2020 y 2023, coincidiendo con la pandemia de COVID-19 y sus secuelas económicas.</li>
 								</ul>
 								<blockquote>Durante la pandemia, algunas empresas cerraron por completo a pesar de haber recibido grandes inversiones. Esto sugiere que incluso negocios bien financiados no pudieron
-									resistir los efectos económicos del COVID-19</blockquote></p>
+									resistir los efectos económicos del COVID-19.</blockquote></p>
 
 								<p><span class="image main"><img src="images/sqlproject10.png" alt="" /><em class="caption">2.- Industrias mas afectadas por el COVID</em></p>
 								<p><strong>Hallazgos:</strong>
@@ -145,7 +143,7 @@
 									<li><strong> Empresas líderes en despidos: </strong>algunas compañías aparecen frecuentemente en el top anual, lo que indica problemas estructurales o sectores en crisis.</li>
 								</ul>
 								<blockquote>Sectores que dependen del contacto directo con las personas como tiendas físicas o transporte, fueron los más golpeados. Además, ciertas empresas tuvieron que
-									reducir personal varias veces en distintos años, lo que podría señalar dificultades prolongadas</blockquote></p>
+									reducir personal varias veces en distintos años, lo que podría señalar dificultades prolongadas.</blockquote></p>
 
 								<p><span class="image main"><img src="images/sqlproject11.png" alt="" /><em class="caption">3.- Impacto Geográfico</em></p>
 								<p><strong>Hallazgos:</strong>
@@ -153,7 +151,7 @@
 									<li><strong> Países mas afectados: </strong>Estados Unidos lidera en número total de despidos, seguido de países europeos como Alemania y Reino Unido.</li>
 									<li><strong> Etapa de la empresa: </strong>las empresas en etapa Post-IPO (ya cotizando en la bolsa de valores) tuvieron más despidos que startups en etapas tempranas.</li>
 								</ul>
-								<blockquote>Los despidos fueron más frecuentes en empresas establecidas y en países con economías grandes pero altamente competitivas, donde ajustar costos fue clave para sobrevivir</blockquote></p>		
+								<blockquote>Los despidos fueron más frecuentes en empresas establecidas y en países con economías grandes pero altamente competitivas, donde ajustar costos fue clave para sobrevivir.</blockquote></p>		
 
 								<p><span class="image main"><img src="images/sqlproject12.png" alt="" /><em class="caption">4.- Tendencias temporales</em></p>
 								<p><strong>Hallazgos:</strong>
@@ -161,7 +159,7 @@
 									<li><strong> Pico de despidos: </strong>el mes con mayor número de despidos fue Marzo de 2020, seguido de olas menores en 2022 y 2023.</li>
 									<li><strong> Acumulación progresiva: </strong>la suma acumulada de despidos creció un 48% entre 2020 y 2023, mostrando un efecto prolongado de la pandemia.</li>
 								</ul>
-								<blockquote>El primer impacto fuerte fue al inicio del COVID-19 pero los despidos continuaron en los años siguientes, como si fuera una 'ola expansiva' de la crisis inicial</blockquote></p>
+								<blockquote>El primer impacto fuerte fue al inicio del COVID-19 pero los despidos continuaron en los años siguientes, como si fuera una 'ola expansiva' de la crisis inicial.</blockquote></p>
 
 								<p><span class="image main"><img src="images/sqlproject13.png" alt="" /><em class="caption">5- Relación entre Financiamiento y Despidos</em></p>
 								<p><strong>Hallazgos:</strong>
@@ -170,15 +168,15 @@
 									<li><strong> Correlación no directa: </strong>no hay una relación clara entre el monto recaudado y la cantidad de despidos; empresas con menos fondos también sobrevivieron.</li>
 								</ul>
 								<blockquote>Inyectar dinero no siempre salva a una empresa. Algunas de estas que recibieron grandes inversiones terminaron cerrando, mientras que otras con menos recursos 
-									lograron adaptarse</blockquote></p>
+									lograron adaptarse.</blockquote></p>
 
 								<p>En último lugar luego de presentar todos estos insights di por terminado este corto y excelente proyecto, considerado por algunas personas como algo diario del Analista 
 									de datos, fue un punto de partida excelente para empezar en este mundo de analiticas y mejorar las habilidades que sabia que tenia pero que necesitaban de la practica
 									en nuevas tareas y procesos.</p>
 								
 								<p>Este proyecto de SQL inicial finalizó con las conclusiones realizadas anteriormente, si deseas ver otro proyecto realizado por mi te recomiendo dirigirte al área de 
-									<strong><a href="#about">Power BI</a></strong>, donde explico los hallazgos claves encontrados en un dashboard básico basandome en una encuensta realizada a personas que
-									respondieron a esta durante todo el año 2024, en la misma se les hizo preguntas sobre país de origen, puesto actual de trabajo, salario actual y niveles de satisfaccion
+									<strong><a href="#about">Power BI</a></strong>, donde explico los hallazgos claves encontrados en un dashboard básico basandome en una encuesta realizada a personas que
+									respondieron durante todo el año 2024, en la misma se les hizo preguntas sobre país de origen, puesto actual de trabajo, salario actual y niveles de satisfaccion
 									con su sueldo y relación vida/trabajo.</p>
 							</article>
 
