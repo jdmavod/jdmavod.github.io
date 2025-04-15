@@ -31,6 +31,7 @@
 							<ul>
 								<li><a href="#intro">SOBRE MI</a></li>
 								<li><a href="#work">SQL</a></li>
+								<!-- <li><a href="#elements">ELEMENTS</a></li> -->
 								<li><a href="#about">POWER BI</a></li>
 								<li><a href="#contact">CONTACTO</a></li>
 							</ul>
@@ -70,24 +71,45 @@
 															
 								<p>Usando este dataset como primer proyecto elegi indagar en varias metricas de despidos alrededor del mundo a partir del año 2020 hasta principios del 2023. En este 
 									sentido estableci algunos objetivos referentes a la limpieza de los datos y distintas preguntas para responder en un futuro analisis exploratorio. El objetivo de este
-									proyecto es limpiar los datos y realizar un analisis de datos exploratorio al final con los resultados limpios y estandarizados. <span class="image main"><img src="images/sqlproject1.png" alt="" /><em class="caption">Verificando que el dataset se 
-									importo correctamente</em></span></p>
+									proyecto es limpiar los datos y realizar un analisis de datos exploratorio al final con los resultados limpios y estandarizados.
+<pre><code>### Confirmar la importacion correcta del dataset ###
+SELECT * FROM layoffs;
+</code></pre>
 								
 								<p>Tomando en cuenta estos objetivos empece entonces a indagar en este proyecto. El objetivo inicial se trataba de buscar, verificar y eliminar duplicados, hice esto mediante un 
 									duplicado de la tabla original ya que en muchas situaciones del dia a dia, nuestra tabla origen siempre se encuentra operativa y en uso por distintos usuarios en una
 									empresa, luego de crear este duplicado se empezaron a realizar distintas verificaciones. Ejemplo fue usar un CTE donde se asigna un ROW_NUMBER a cada fila para posteriormente, 
-									si encontraba un duplicado, verificar si ese duplicado en realidad posee alguna columna con datos distintos o si una columna verificada tenia al menos un dato igual. 
-									<span class="image main"><img src="images/sqlproject2.png" alt="" /> <em class="caption">Creando un CTE</em></span></p>
+									si encontraba un duplicado, verificar si ese duplicado en realidad posee alguna columna con datos distintos o si una columna verificada tenia al menos un dato igual.
+<pre><code>### Creando un CTE para duplicar la tabla ###
+WITH duplicate_cte AS (SELECT *, ROWNUMBER()
+OVER (PARTITION BY company, location, industry,
+total_laid_off, percentage_laid_off, `date`,
+stage, country, funds_raised_millions) AS row_num
+FROM layoffs_duplicate)
+
+SELECT * FROM duplicate_cte WHERE row_num > 1;
+</code></pre>
 								
 								<p>Siguiendo con el CTE encontre que la compañia llamada "Casper" mostraba resultados duplicados, al verificar me di cuenta de que obtuve 3 registros y tenia 2 que son duplicados
 									mostrando exactamente la misma informacion. Para seguir con la limpieza de datos decidi dejar esta tabla duplicada y crear una tercera tabla que me permitia agregar cualquier
-									columna que necesitara y poder trabajar sin ningun limite de accion sobre estos datos.<span class="image main"><img src="images/sqlproject3.png" alt="" /> <em class="caption">Verificando los registros duplicados</em></span></p>
+									columna que necesitara y poder trabajar sin ningun limite de accion sobre estos datos.</p>
 
-								</p>Basandome en este resutaldo decidi entonces crear una tercera tabla con los mismos datos agregando la columna "row_number" para realizar un DELETE leyendo los 
+								<p>Basandome en este resutaldo decidi entonces crear una tercera tabla con los mismos datos agregando la columna "row_number" para realizar un DELETE leyendo los 
 									distintos campos y comparandolos entre ellos y asi completar el primer objetivo de este proyecto. Luego de cumplir con la limpieza de los duplicados se pudo estandarizar todos
 									los datos dentro de este tercer duplicado para mantener un orden en como se presentan los resultados ya sea con toda la columna utilizando un mismo formato, una misma 
-									abrevacion o eliminando caracateres sobrantes e innecesarios. <span class="image main"><img src="images/sqlproject4.png" alt="" /><em class="caption">Estandarizando registros
-									y cambiando la columna 'fecha' de tipo string a date</em></span></p>
+									abrevacion o eliminando caracateres sobrantes e innecesarios.</p>
+
+<pre><code> ### Consultar una columna ###
+SELECT `date` FROM layoffs_duplicate2;
+
+### Cambiar el tipo e dato de TEXTO a FECHA ###
+SELECT `date`, STR_TO_DATE(`date`, %m,%d,%Y)
+FROM layoffs_duplicate2;
+
+### Actualizar la columna con el formato ###
+UPDATE layoffs_duplicate2 SET date = STR_TO_DATE
+(`date`, '%m,%d,%Y');
+</code></pre>
 
 								<p>Para cumplir con este objetivo se realizaron varias consultas en distintas columnas de la tabla observando todos esas pequeñas diferencias de caracteres, espacios, signos de
 									puntacion y demas. Como se observa en la imagen anterior se realizaron algunos TRIM en distintas columnas, una de estas fue en la columna "country" donde se mostraba que
@@ -99,8 +121,15 @@
 									en primer lugar se realizó un SELF JOIN para verificar cuales espacios estaban vacíos o nulos y como se podía proceder para actualizarlos, se decidió entonces luego de obtener 
 									los resutlados que se realizaria un UPDATE junto a un JOIN tomando en cuenta el campo "company" que le ponía como condición actualizarlos en campos vacíos y nulos. Antes de 
 									realizar esto me di cuenta que primero debia indicar que los campos vacíos debian ser iguales a nulos para que el UPDATE no tuviera problemas eligiendo entre las dos condiciones 
-									que eran vacios y nulos y solo eligiera campos nulos para mayor comodidad<span class="image main"><img src="images/sqlproject5.png" alt="" /><em class="caption">La compañia Bally's
-									Interactive no cumplio con ninguna condicion y fue el unico registro que no fue afectado por este UPDATE</em></span></p>
+									que eran vacios y nulos y solo eligiera campos nulos para mayor comodidad.
+<pre><code>### JOIN para tratar nulos y vacios ###
+UPDATE layoffs_duplicate2 AS t1
+JOIN layoffs_duplicate2 AS t2
+ON t1.company = t2.company
+SET t1.industry = t2.industry
+WHERE t1.industry IS null
+AND t2.industry IS NOT NULL;
+</code></pre>
 								
 								<p>En este punto los tres primeros objetivos de este proyecto ya se habian logrado asi que habia llegado el momento de los toques finales, eliminar columnas innecesarias para el 
 									Analisis Exploratorio que se realizaria mas adelante y verificar que todo estuviera correcto en el dataset. Para este objetivo final decidi eliminar las columnas "total_laid_off" 
@@ -110,8 +139,12 @@
 									una fuente confiable de datos ya que la cantidad estas dos columnas eran muy grande, lo que se consideraría como datos redundantes sin ningun uso o funcion a cumplir a futuro.</p>
 								
 								<p><strong>row_number:</strong> Esta columna fue creada al inicio de este proyecto con la única intención de cumplir con algunos queries, por ende, se consideraba innecesaria para
-									cualquier uso futuro. <span class="image main"><img src="images/sqlproject7.png" alt="" /><em class="caption">Se realizo un SELECT ordenado por el campo fecha de manera ascendente
-									para verificar todos los datos y dar por finalizado esta parte del proyecto.</em></p>
+									cualquier uso futuro.</p>
+								
+								<p>La fase de limpieza y preparación del dataset de despidos ha concluido satisfactoriamente, cumpliendo todos los objetivos clave establecidos. Se abordaron y eliminaron duplicados,
+									se estandarizaron formatos en columnas cruciales como fechas y países y se gestionaron inteligentemente los valores nulos y vacíos para asegurar la consistencia. Tras eliminar 
+									columnas redundantes e innecesarias, el dataset está ahora óptimo y listo para la fase de Análisis Exploratorio de Datos (EDA). Este riguroso proceso ejemplifica perfectamente el
+									esencial trabajo diario que realiza un analista de datos para transformar datos crudos en información fiable y lista para generar valor.</p>
 
 								<h3 class="major">Analisis de datos exploratorio</h3>
 								<span class="image main"><img src="images/sqlproject8.png" alt="" /><em class="caption">Exploratory Data Analysis</em></span>
@@ -164,9 +197,10 @@
 								<blockquote>Inyectar dinero no siempre salva a una empresa. Algunas de estas que recibieron grandes inversiones terminaron cerrando, mientras que otras con menos recursos 
 									lograron adaptarse.</blockquote></p>
 
-								<p>En último lugar luego de presentar todos estos insights di por terminado este corto y excelente proyecto, considerado por algunas personas como algo diario del Analista 
-									de datos, fue un punto de partida excelente para empezar en este mundo de analiticas y mejorar las habilidades que sabia que tenia pero que necesitaban de la practica
-									en nuevas tareas y procesos.</p>
+								<p>Una vez finalizada la limpieza, se realizó un análisis exploratorio del dataset de despidos para responder preguntas clave. Los hallazgos revelaron un impacto inicial severo de 
+									la pandemia, afectando desproporcionadamente a las industrias de Consumo, Retail y Transporte, con EE.UU. liderando geográficamente. Curiosamente, empresas Post-IPO sufrieron más
+									despidos que startups y una alta financiación no garantizó la supervivencia, evidenciado por compañías bien financiadas que despidieron al 100% de su personal. El análisis
+									confirma un efecto prolongado de la crisis, mostrando un crecimiento acumulado de despidos en el periodo estudiado</p>
 								
 								<p>Este proyecto de SQL inicial finalizó con las conclusiones realizadas anteriormente, si deseas ver otro proyecto realizado por mi te recomiendo dirigirte al área de 
 									<strong><a href="#about">Power BI</a></strong>, donde explico los hallazgos claves encontrados en un dashboard básico basandome en una encuesta realizada a personas que
