@@ -5,8 +5,6 @@
 	Dimension by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-
-	En proceso para cambiar los proyectos basicos por unos mas avanzados...
 */
 
 html, body, div, span, applet, object,
@@ -195,7 +193,7 @@ input, select, textarea {
 			width: -moz-max-content;
 			width: -webkit-max-content;
 			width: -ms-max-content;
-			width: max-content;
+			/* width: max-content; */
 			padding-bottom: 0.5rem;
 			margin: 0 0 2rem 0;
 		}
@@ -1523,6 +1521,47 @@ input, select, textarea {
 
 		}
 
+		@media screen and (max-width: 600px) {
+			#header nav ul {
+				display: flex;
+				flex-direction: column;
+				align-items: stretch;
+				gap: 1rem; /* Espacio entre botones */
+				}
+
+			#header nav ul li {
+				width: 100%;
+				}
+				
+			#header nav ul li a {
+				display: block;
+				width: 100%;
+				font-size: 1.0em;         /* Ajusta el tamaño del texto si lo deseas */
+				padding: 0rem 0rem;     /* Más espacio para el dedo */
+				white-space: normal;      /* Permite saltos de línea */
+				text-align: center;       /* Centra el texto */
+				box-sizing: border-box;
+			}
+		}
+
+		@media screen and (max-width: 600px) {
+			#header nav ul {
+				border: none; /* Elimina el borde del contenedor para evitar cortes */
+			}
+
+			#header nav ul li {
+				border: none; /* Elimina bordes de los li para evitar duplicados */
+			}
+
+			#header nav ul li a {
+				border: 1px solid #fff; /* Borde blanco alrededor de cada botón */
+				border-radius: 4px;
+				margin: 0; /* Opcional: elimina separación extra */
+				box-sizing: border-box;
+			}
+
+		}
+
 /* Main */
 
 	#main {
@@ -1566,10 +1605,10 @@ input, select, textarea {
 			transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
 			padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
 			position: relative;
-			width: 40rem;
+			width: 60vw;
 			max-width: 100%;
-			background-color: rgba(27, 31, 34, 0.85);
-			border-radius: 4px;
+			background-color: rgba(27, 31, 34, 0.95);
+			border-radius: 16px;
 			opacity: 0;
 		}
 
@@ -1643,6 +1682,33 @@ input, select, textarea {
 				padding: 3rem 1.5rem 0.5rem 1.5rem ;
 			}
 
+		}
+
+		@media screen and (max-width: 980px) {
+			#main article {
+        width: 90vw;           /* Ocupa el 90% del ancho de la ventana */
+        max-width: 98vw;       /* Máximo casi todo el ancho */
+        padding: 2.5rem 1rem;  /* Menos padding lateral */
+			}
+
+		}
+
+		@media screen and (max-width: 600px) {
+			#main article {
+        width: 95vw;           /* Prácticamente todo el ancho */
+        max-width: 100vw;
+        padding: 2.0rem 1.0rem; /* Padding lateral mínimo */
+			}
+		
+		}
+
+		@media screen and (max-width: 600px) {
+			h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
+        width: 100%;           /* Ocupa todo el ancho disponible */
+        white-space: normal;   /* Permite saltos de línea */
+        text-align: left;      /* Opcional: alinea a la izquierda en móvil */
+			}
+		
 		}
 
 /* Footer */

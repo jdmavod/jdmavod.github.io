@@ -66,6 +66,6 @@ UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, LICENSOR OFFERS T
 	Dimension by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-
-	En proceso para cambiar los proyectos basicos por unos mas avanzados...
 */
+
+**Portfolio done using a template, creators & rights will be found up**
