@@ -5,7 +5,7 @@
 		<title>Jonathan Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="icon" type="image/png" href="images/icondb.png" />
+		<link rel="icon" type="image/png" href="images/page-icon.png" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
@@ -17,13 +17,14 @@
 				<!-- Header -->
 					<header id="header">
 						<div class="logo">
-							<img src="images/foto.png" class="custom-icon">
+							<img src="images/me.png" class="custom-icon">
 						</div>
 						<div class="content">
 							<div class="inner">
 								<h2>JONATHAN'S PORTFOLIO</h2>
 								<p>Excel, SQL and Python for data</p>
 								<p>Dashboards in Power BI</p>
+								<P>Latest project: Data Analyst Survey from 2022</P>
 								<p><a href="https://github.com/jdmavod?tab=projects">GitHub Profile</a></p>
 							</div>
 						</div>
@@ -31,7 +32,7 @@
 							<ul>
 								<li><a href="#aboutme">ABOUT ME</a></li>
 								<li><a href="#mssqls">T-SQL</a></li>
-								<li><a href="#fullproject">PROJECT</a></li>
+								<li><a href="#insights">INSIGHTS</a></li>
 								<li><a href="#powerbi">POWER BI</a></li>
 								<li><a href="#contact">CONTACT</a></li>
 							</ul>
@@ -43,495 +44,213 @@
 
 						<!-- Sobre mi -->
 							<article id="aboutme" style="text-align: justify;">
-								<h2 class="major">Mis inicios y bases</h2>
-								<span class="image main"><img src="images/me.png" alt="" /></span>
-								<p>Hola, mi nombre es Jonathan Mavo, obtuve mi titulo en Ingenieria de Sistemas y he estado laborando como IT Support desde el 2020. Siempre me he mantenido 
-									enfocado la resolucion de problemas tanto a nivel de software como hardware y siempre me he sentido muy a gusto con la tecnologia, con ganas constantes de aprender y de siempre 
-									desarrollar mis conocimientos hasta niveles optimos para aplicarlos en mi dia a dia.</p>
-									
-								<p>En los ultimos 2 años se ha observado un gran desarrollo en el sector de la inteligencia artificial y podemos ver que el internet esta inundado con una IA para cada actividad,
-									lo que nos permite a todos mejorar en el dia a dia abriendo puertas a todas las personas. Esto nos ha permitido a todos aprender desde lo mas basico de algo que no conocemos
-									hasta indagar en lo mas profundo de nuestros conocimientos. Mucha gente en la actualidad piensa que la IA nos quitara el trabajo, nuestros puestos, nuestra vida diaria para ser
-									resuelta en un prompt y la verdad es que nunca se podra reemplazar nuestra humanidad.</p>
+								<h2 class="major">The road: from IT Support to Data Science</h2>
+								<span class="image main no-overlay"><img src="images/me-2.jpg"></span>
+								<p>Hi, I'm Jonathan Mavo from Venezuela. I earned my degree in Systems Engineering and have been working in the tech field since 2020. Throughout my career, I've always been passionate 
+									about problem-solving at both software and hardware levels, and I genuinely feel at home with technology. What drives me most is my constant desire to learn and push my knowledge 
+									to optimal levels so I can apply it effectively in my daily work and projects.</p>
+
+								<p>The last couple of years have been fascinating with the incredible development in artificial intelligence. It seems like there's an AI tool for every activity now, and honestly, this 
+									has opened doors for all of us to improve continuously. For someone like me who loves learning, AI has made it possible to go from understanding the basics of something completely 
+									new to diving deep into complex topics. It's been a game-changer in how we approach learning and skill development.</p>
 								
-								<p>Para mi este 2025 representa un año de avance, un camino de desarrollo para mis conocomientos y mi carrera, me siento entusiasmado y estoy enfocado en lograr 
-									conseguir un lugar que me permita ser de ayuda. Actualmente estoy concentrado en aplicar mis habilidades en el campo de analisis de datos. Afortunadamente
-									durante mis años de laburo como IT Support me ha permitido resolver problemas buscando la fuente, pensando en un plan de accion e implementarlo para obtener
-									resultados efectivos, siento que todo esto de verdad me ayudara en este camino del Analisis de Datos.</p> 
-								
-								<p>La decision de elegir esta carrera me llevo a realizar <strong><a href="#work">mi primer proyecto</a></strong> sobre Limpieza de datos y Analisis exploratorio de datos
-									en donde trabaje con un dataset sobre los despidos alrededor del mundo debido al COVID-19 estandarizando distintas columnas para luego tomar nota de algunos insight tomando 
-									en cuenta los resultados obtenidos de una tabla ya limpia mediante consultas realizadas utilizando distintos queries y subqueries.</p>
+								<p>For me, 2025 represents a pivotal year of advancement and growth. I'm excited and focused on achieving significant personal and professional development as I transition into data 
+									analysis with the ultimate goal of moving into data science. My experience in tech has taught me to approach problems by finding the root cause, creating an action plan, and 
+									implementing solutions that deliver real results. I believe this problem-solving mindset will be invaluable on my journey toward becoming a data scientist. This passion for 
+									data-driven solutions led me to build my first personal data project, which you can find on my GitHub profile as "<strong><a href="https://github.com/jdmavod/First-ETL-EDA-Project" target="_blank">First-ETL-EDA-Project</a></strong>". 
+									I keep my portfolio updated with my latest work, so feel free to explore what I've created. I hope my projects can inspire others who are also starting their journey in this exciting field.</p>
 							</article>
 
 						<!-- MS SQL Server -->
 							<article id="mssqls" style="text-align: justify;">
-								<h3 class="major">Despidos mundiales entre los años 2020-2023</h3>
-								<span class="image main"><img src="images/sqlproject.jpg" alt="" /><em class="caption">Despidos internacionales en el mundo</em></span>
-															
-								<p>Usando este dataset como primer proyecto elegi indagar en varias metricas de despidos alrededor del mundo a partir del año 2020 hasta principios del 2023. En este 
-									sentido estableci algunos objetivos referentes a la limpieza de los datos y distintas preguntas para responder en un futuro analisis exploratorio. El objetivo de este
-									proyecto es limpiar los datos y realizar un analisis de datos exploratorio al final con los resultados limpios y estandarizados.
-<pre><code>### Confirmar la importacion correcta del dataset ###
-SELECT * FROM layoffs;
-</code></pre>
+								<h2 class="major">Data Migration Process: From Single Table to Normalized Structure</h2>
+								<p>This section details the crucial phase of processing and conditioning the raw data, a fundamental pillar for ensuring the reliability and validity of subsequent analyses in 
+									this project. To carry out the cleaning, transformation, and preparation of the dataset, Microsoft SQL Server has been employed as the database management system. The following 
+									will describe the specific procedures implemented through SQL queries for data manipulation, addressing the identification and treatment of inconsistencies, the standardization 
+									of formats, and the creation of a data structure optimized for exploratory analysis and subsequent modeling. For a detailed look at all the code implemented, including the 
+									complete .sql scripts and any associated .py files, please refer to my GitHub profile containing the repository for this project <strong><a href="https://github.com/jdmavod/jdmavod.github.io" target="_blank">HERE</a></strong>. 
+									While the repository contains the comprehensive scripts used for data processing, this section will present a more summarized and accessible overview of the key SQL operations 
+									performed for data cleaning and preparation.</p>
 								
-								<p>Tomando en cuenta estos objetivos empece entonces a indagar en este proyecto. El objetivo inicial se trataba de buscar, verificar y eliminar duplicados, hice esto mediante un 
-									duplicado de la tabla original ya que en muchas situaciones del dia a dia, nuestra tabla origen siempre se encuentra operativa y en uso por distintos usuarios en una
-									empresa, luego de crear este duplicado se empezaron a realizar distintas verificaciones. Ejemplo fue usar un CTE donde se asigna un ROW_NUMBER a cada fila para posteriormente, 
-									si encontraba un duplicado, verificar si ese duplicado en realidad posee alguna columna con datos distintos o si una columna verificada tenia al menos un dato igual.
-<pre><code>### Creando un CTE para duplicar la tabla ###
-WITH duplicate_cte AS (SELECT *, ROWNUMBER()
-OVER (PARTITION BY company, location, industry,
-total_laid_off, percentage_laid_off, `date`,
-stage, country, funds_raised_millions) AS row_num
-FROM layoffs_duplicate)
+								<p>This project involved migrating survey data from a single source table (called: datos_iniciales) into a more organized, normalized database structure consisting of three separate 
+									tables: datos_personales (personal data), datos_trabajo (work data), and datos_q6 (question 6 responses). The goal was to improve data organization and make the information 
+									easier to manage and query.</p><span class="image main no-overlay"><img src="images/ms-sql-1.png"></span>
 
-SELECT * FROM duplicate_cte WHERE row_num > 1;
-</code></pre>
+								<h2>The Migration Process</h2>
+								<h3><strong>&#8226; <u>Step 1: Personal Data Migration</u></strong></h3>
+								<p>The first step was straightforward - I successfully transferred personal information including respondent ID, gender, age, country, education level, and ethnicity from the source 
+									table to the dedicated datos_personales (personal data) table. This migration completed without any issues.</p><span class="image main no-overlay"><img src="images/ms-sql-2.png"></span>
 								
-								<p>Siguiendo con el CTE encontre que la compañia llamada "Casper" mostraba resultados duplicados, al verificar me di cuenta de que obtuve 3 registros y tenia 2 que son duplicados
-									mostrando exactamente la misma informacion. Para seguir con la limpieza de datos decidi dejar esta tabla duplicada y crear una tercera tabla que me permitia agregar cualquier
-									columna que necesitara y poder trabajar sin ningun limite de accion sobre estos datos.</p>
+								<h3><strong>&#8226; <u>Step 2: Work Data Migration - The Challenge</u></strong></h3>
+								<p>When attempting to migrate work-related data to the datos_trabajo (work data) table, I encountered a significant technical obstacle. The salario (salary) column in my source table 
+									was stored as text (VARCHAR), containing ranges like "0-40k" or "40k-80k", while our destination table expected numerical values (INT). This data type mismatch prevented the direct 
+									transfer of salary information.</p>
 
-								<p>Basandome en este resutaldo decidi entonces crear una tercera tabla con los mismos datos agregando la columna "row_number" para realizar un DELETE leyendo los 
-									distintos campos y comparandolos entre ellos y asi completar el primer objetivo de este proyecto. Luego de cumplir con la limpieza de los duplicados se pudo estandarizar todos
-									los datos dentro de este tercer duplicado para mantener un orden en como se presentan los resultados ya sea con toda la columna utilizando un mismo formato, una misma 
-									abrevacion o eliminando caracateres sobrantes e innecesarios.</p>
+								<h3><strong>&#8226; <u>Step 3: The Solution - Data Transformation</u></strong></h3>
+								<p>To resolve this compatibility issue, I implemented a multi-step solution:</p>
+								<p><strong><em>1.- Python Data Processing:</em></strong> I developed a Python script to transform the salary ranges into numerical values. The script was designed to extract the highest 
+									value from each salary range - for example, "0-40k" became 40000, and "40k-80k" became 80000. This approach ensured I captured the upper bound of each salary range as a single 
+									integer value. You can find the complete script on my GitHub profile inside the repository.</p>
 
-<pre><code> ### Consultar una columna ###
-SELECT `date` FROM layoffs_duplicate2;
+								<p><strong><em>2.- Data Export and Import:</em></strong> After processing the salary data with Python, I exported the transformed data as a CSV file using SQL Server Management Studio (SSMS). 
+									However, during the import process, a new table called salarios_nuevo was inadvertently created instead of updating the existing structure.</p>
 
-### Cambiar el tipo e dato de TEXTO a FECHA ###
-SELECT `date`, STR_TO_DATE(`date`, %m,%d,%Y)
-FROM layoffs_duplicate2;
+								<h3><strong>&#8226; <u>Step 4: Data Integration</u></strong></h3>
+								<p>Rather than starting over, I adapted my approach to work with the situation:</p>
+								<p><strong><em>1.- Initial Data Transfer:</em></strong> I first inserted all work-related data except salaries from datos_iniciales to datos_trabajo, leaving the salary column empty temporarily.</p>
 
-### Actualizar la columna con el formato ###
-UPDATE layoffs_duplicate2 SET date = STR_TO_DATE
-(`date`, '%m,%d,%Y');
-</code></pre>
+								<p><strong><em>2.- Data Verification:</em></strong> Before updating the salary values, I had to perform a verification query using an INNER JOIN between datos_trabajo and salarios_nuevo tables. 
+									This allowed me to preview exactly which records would be updated and confirm the data looked correct.</p>
 
-								<p>Para cumplir con este objetivo se realizaron varias consultas en distintas columnas de la tabla observando todos esas pequeñas diferencias de caracteres, espacios, signos de
-									puntacion y demas. Como se observa en la imagen anterior se realizaron algunos TRIM en distintas columnas, una de estas fue en la columna "country" donde se mostraba que
-									el país "United States" devolvía como resultado dos registros, uno indicando "United States" y otro "United States.", fueron todas esas pequeñas diferencias las que se fueron
-									optimizando en el camino. De igual manera note que la columna FECHA era del tipo STRING, al momento de trabajar con esta columna seria mas util manejarla como columna de tipo 
-									'date' por lo que se cambio con un STR_TO_DATE.</p>
+								<p><strong><em>3.- Final Update:</em></strong> Once verified, I then executed an UPDATE statement with an INNER JOIN to populate the salary column in datos_trabajo with the processed 
+									numerical values from salarios_nuevo.</p><span class="image main no-overlay"><img src="images/ms-sql-3.png"></span>
+
+								<h3><strong>&#8226; <u>Step 5: Question 6 Responses Migration</u></strong></h3>
+								<p>The final step involved transferring survey responses related to question 6 (Q6) to the datos_q6 table. This included satisfaction ratings ranging from 1 to 10 for salary, work-life balance, 
+									coworkers, management, and promotion opportunities. This migration completed successfully without any data type conflicts.</p><span class="image main no-overlay"><img src="images/ms-sql-4.png"></span>
 								
-								<p>Segui entonces con el tercer objetivo de arreglar los espacios vacíos y nulos dentro del dataset, para realizar esto de la manera mas óptima posible
-									en primer lugar se realizó un SELF JOIN para verificar cuales espacios estaban vacíos o nulos y como se podía proceder para actualizarlos, se decidió entonces luego de obtener 
-									los resutlados que se realizaria un UPDATE junto a un JOIN tomando en cuenta el campo "company" que le ponía como condición actualizarlos en campos vacíos y nulos. Antes de 
-									realizar esto me di cuenta que primero debia indicar que los campos vacíos debian ser iguales a nulos para que el UPDATE no tuviera problemas eligiendo entre las dos condiciones 
-									que eran vacios y nulos y solo eligiera campos nulos para mayor comodidad.
-<pre><code>### JOIN para tratar nulos y vacios ###
-UPDATE layoffs_duplicate2 AS t1
-JOIN layoffs_duplicate2 AS t2
-ON t1.company = t2.company
-SET t1.industry = t2.industry
-WHERE t1.industry IS null
-AND t2.industry IS NOT NULL;
-</code></pre>
-								
-								<p>En este punto los tres primeros objetivos de este proyecto ya se habian logrado asi que habia llegado el momento de los toques finales, eliminar columnas innecesarias para el 
-									Analisis Exploratorio que se realizaria mas adelante y verificar que todo estuviera correcto en el dataset. Para este objetivo final decidi eliminar las columnas "total_laid_off" 
-									"percentage_laid_off" y una de las primeras columnas creadas en este proyecto la cual fue "row_number", las razones de eliminar cada una de estas columnas fueron las siguientes:</p>
-
-								<p><strong>total_laid_off y percentage_laid_off:</strong> Si por alguna razón este dataset se utilizaba para crear un dashboard, la cantidad de datos nulos en ambas columnas no seria
-									una fuente confiable de datos ya que la cantidad estas dos columnas eran muy grande, lo que se consideraría como datos redundantes sin ningun uso o funcion a cumplir a futuro.</p>
-								
-								<p><strong>row_number:</strong> Esta columna fue creada al inicio de este proyecto con la única intención de cumplir con algunos queries, por ende, se consideraba innecesaria para
-									cualquier uso futuro.</p>
-								
-								<p>La fase de limpieza y preparación del dataset de despidos ha concluido satisfactoriamente, cumpliendo todos los objetivos clave establecidos. Se abordaron y eliminaron duplicados,
-									se estandarizaron formatos en columnas cruciales como fechas y países y se gestionaron inteligentemente los valores nulos y vacíos para asegurar la consistencia. Tras eliminar 
-									columnas redundantes e innecesarias, el dataset está ahora óptimo y listo para la fase de Análisis Exploratorio de Datos (EDA). Este riguroso proceso ejemplifica perfectamente el
-									esencial trabajo diario que realiza un analista de datos para transformar datos crudos en información fiable y lista para generar valor.</p>
-
-								<h3 class="major">Analisis de datos exploratorio</h3>
-								<span class="image main"><img src="images/sqlproject8.png" alt="" /><em class="caption">Exploratory Data Analysis</em></span>
-
-								<p>Al momento de finalizar la limpieza de datos empece a responder algunas dudas sobre toda esta información guardada en el dataset, estas preguntas iban desde saber cuales fueron
-									las empresas que despidieron a la totalidad de su plantilla o que porcentaje representaban los despidos en algunos casos y para esto seria mejor utilizar los resultados obtenidos
-									de las tablas usando los datos ya ordenados, limpios y estandarizados para desarrollar hipótesis o insights basadas en los mismos.</p>
-								
-								<p><span class="image main"><img src="images/sqlproject9.png" alt="" /><em class="caption">1.- Impacto general de los despidos</em></p>
-								<p><strong>Hallazgos:</strong>
+								<h3><u>Key Lessons Learned</u></h3>
+								<p>This migration process provided valuable insights into database management and data transformation best practices:</p>
 								<ul>
-									<li><strong> Máximo histórico de despidos: </strong>hubo casos extremos de empresas que despidieron al 100% de su personal, incluso algunas que habían recaudado millones
-										de dólares antes del colapso.</li>
-									<li><strong> Período crítico: </strong>los despidos se concentraron entre 2020 y 2023, coincidiendo con la pandemia de COVID-19 y sus secuelas económicas.</li>
+									<li><strong>Data Type Planning and Schema Design:</strong> The salary column incompatibility taught us that thorough schema analysis is crucial before beginning any migration. 
+										We learned to always compare source and destination table structures, paying special attention to data types, constraints, and formatting requirements. In future projects, 
+										creating a mapping document that lists each column's source and destination types would prevent similar issues.</li>
+									<li><strong>Data Transformation Strategies:</strong> Working with salary ranges like "0-40k" demonstrated that real-world data often doesn't match our ideal database formats. 
+										We discovered that having a data transformation toolkit (in this case, Python) is essential for handling these situations. The decision to take the upper bound of salary 
+										ranges was a business logic choice that required careful consideration of how the data would be used in analysis.</li>
+									<li><strong>Verification and Testing Procedures:</strong> The verification SELECT statement with INNER JOIN proved invaluable. This step allowed us to catch potential issues 
+										before making permanent changes to our data. We learned that every UPDATE or INSERT operation should be preceded by a corresponding SELECT statement to preview the changes. 
+										This practice prevents data corruption and gives confidence in the migration process.</li>
+									<li><strong>Adaptability and Problem-Solving:</strong> When the import process accidentally created the salarios_nuevo table instead of updating our existing structure, 
+										we could have started over. Instead, we adapted our approach and used this "mistake" as an opportunity to implement a more controlled update process. This flexibility 
+										saved time and actually resulted in a more robust solution.</li>
+									<li><strong>Documentation and Communication:</strong> The detailed comments in our T-SQL code proved essential for understanding the process later. Documenting not just what 
+										we did, but why we did it and what problems we encountered, creates valuable knowledge for future projects and team members.</li>
+									<li><strong>Incremental Migration Benefits:</strong> Breaking the migration into logical chunks (personal data, work data, survey data) made troubleshooting easier. When the 
+										salary issue arose, it only affected the work data migration, leaving the other successful migrations intact. This modular approach reduced risk and made the overall 
+										process more manageable.</li>
 								</ul>
-								<blockquote>Durante la pandemia, algunas empresas cerraron por completo a pesar de haber recibido grandes inversiones. Esto sugiere que incluso negocios bien financiados no pudieron
-									resistir los efectos económicos del COVID-19.</blockquote></p>
+								<p>The end result was a successfully normalized database structure that separates personal information, work details, and survey responses into logical, manageable tables while 
+									maintaining data integrity throughout the process. More importantly, we developed a methodology for handling complex data migrations that can be applied to future projects.</p>
 
-								<p><span class="image main"><img src="images/sqlproject10.png" alt="" /><em class="caption">2.- Industrias mas afectadas por el COVID</em></p>
-								<p><strong>Hallazgos:</strong>
-								<ul>
-									<li><strong> Industrias críticas: </strong>las más impactadas fueron las industrias de Consumo, Retail y Transporte.</li>
-									<li><strong> Empresas líderes en despidos: </strong>algunas compañías aparecen frecuentemente en el top anual, lo que indica problemas estructurales o sectores en crisis.</li>
-								</ul>
-								<blockquote>Sectores que dependen del contacto directo con las personas como tiendas físicas o transporte, fueron los más golpeados. Además, ciertas empresas tuvieron que
-									reducir personal varias veces en distintos años, lo que podría señalar dificultades prolongadas.</blockquote></p>
-
-								<p><span class="image main"><img src="images/sqlproject11.png" alt="" /><em class="caption">3.- Impacto Geográfico</em></p>
-								<p><strong>Hallazgos:</strong>
-								<ul>
-									<li><strong> Países mas afectados: </strong>Estados Unidos lidera en número total de despidos, seguido de países europeos como Alemania y Reino Unido.</li>
-									<li><strong> Etapa de la empresa: </strong>las empresas en etapa Post-IPO (ya cotizando en la bolsa de valores) tuvieron más despidos que startups en etapas tempranas.</li>
-								</ul>
-								<blockquote>Los despidos fueron más frecuentes en empresas establecidas y en países con economías grandes pero altamente competitivas, donde ajustar costos fue clave para sobrevivir.</blockquote></p>		
-
-								<p><span class="image main"><img src="images/sqlproject12.png" alt="" /><em class="caption">4.- Tendencias temporales</em></p>
-								<p><strong>Hallazgos:</strong>
-								<ul>
-									<li><strong> Pico de despidos: </strong>el mes con mayor número de despidos fue Marzo de 2020, seguido de olas menores en 2022 y 2023.</li>
-									<li><strong> Acumulación progresiva: </strong>la suma acumulada de despidos creció un 48% entre 2020 y 2023, mostrando un efecto prolongado de la pandemia.</li>
-								</ul>
-								<blockquote>El primer impacto fuerte fue al inicio del COVID-19 pero los despidos continuaron en los años siguientes, como si fuera una 'ola expansiva' de la crisis inicial.</blockquote></p>
-
-								<p><span class="image main"><img src="images/sqlproject13.png" alt="" /><em class="caption">5- Relación entre Financiamiento y Despidos</em></p>
-								<p><strong>Hallazgos:</strong>
-								<ul>
-									<li><strong> Paradoja de fondos recaudados:: </strong>algunas empresas que despidieron al 100% de su personal habían recaudado más de $500 millones</li>
-									<li><strong> Correlación no directa: </strong>no hay una relación clara entre el monto recaudado y la cantidad de despidos; empresas con menos fondos también sobrevivieron.</li>
-								</ul>
-								<blockquote>Inyectar dinero no siempre salva a una empresa. Algunas de estas que recibieron grandes inversiones terminaron cerrando, mientras que otras con menos recursos 
-									lograron adaptarse.</blockquote></p>
-
-								<p>Una vez finalizada la limpieza, se realizó un análisis exploratorio del dataset de despidos para responder preguntas clave. Los hallazgos revelaron un impacto inicial severo de 
-									la pandemia, afectando desproporcionadamente a las industrias de Consumo, Retail y Transporte, con EE.UU. liderando geográficamente. Curiosamente, empresas Post-IPO sufrieron más
-									despidos que startups y una alta financiación no garantizó la supervivencia, evidenciado por compañías bien financiadas que despidieron al 100% de su personal. El análisis
-									confirma un efecto prolongado de la crisis, mostrando un crecimiento acumulado de despidos en el periodo estudiado</p>
-								
-								<p>Este proyecto de SQL inicial finalizó con las conclusiones realizadas anteriormente, si deseas ver otro proyecto realizado por mi te recomiendo dirigirte al área de 
-									<strong><a href="#about">Power BI</a></strong>, donde explico los hallazgos claves encontrados en un dashboard básico basandome en una encuesta realizada a personas que
-									respondieron durante todo el año 2024, en la misma se les hizo preguntas sobre país de origen, puesto actual de trabajo, salario actual y niveles de satisfaccion
-									con su sueldo y relación vida/trabajo.</p>
 							</article>
 
 						<!-- Power BI -->
 							<article id="powerbi" style="text-align: justify;">
-								<h3 class="major">Encuesta sobre profesionales en el campo de datos</h3>
-								<span class="image main"><img src="images/main.png" alt="" /></span>
+								<h2 class="major">Data Survey Dashboard</h2>
 
-								<p>En este dashboard se resumen los hallazgos clave de una encuesta realizada a 630 profesionales de datos con el objetivo de comprender mejor su satisfaccion con los salarios,
-									preferencias de lenguajes de programación, percepción de la dificultad para ingresar al campo, y niveles de satisfacción laboral. En este sentido se tomo nota de los siguientes
-									hallazgos:</p>
-								
-								<p><strong>1. Salario promedio por cargo laboral</strong>
-									<ul>
-										<li>El cargo de "Data Scientist" lidera con el salario promedio más alto seguido por "Data Engineer" y "Data Architect". </li><blockquote>Esta superioridad salarial de los 
-											Data Scientists subraya la intensa demanda en el mercado por profesionales con la capacidad de extraer insights valiosos y construir modelos predictivos a partir de datos
-											complejos. Su alta especialización que a menudo incluye un profundo conocimiento en estadística, machine learning y programación, justifica esta remuneración superior.</blockquote>
-										
-										<li>Cargos laborales como "Database Developer" y "Student/Looking for a job" presentan los salarios más bajos.</li><blockquote>Esta diferencia salarial refleja la naturaleza
-											más operativa y en el caso de los estudiantes, la falta de experiencia laboral consolidada. Los Database Developers, si bien cruciales para la gestión y organización de
-											datos, suelen tener una curva de especialización percibida como menos pronunciada en comparación con los roles de ciencia de datos.</blockquote></p>
-									</ul>
-								
-								<p><strong>2. Países de los Encuestados:</strong>
-									<ul>
-										<li>La mayoría de los encuestados residen en Estados Unidos, lo que podría influir en los resultados debido a sesgos culturales y del mercado laboral.</li><blockquote>La 
-											predominancia de encuestados estadounidenses implica que los salarios promedio observados reflejan principalmente las condiciones del mercado laboral de EE.UU. y podrían
-											no ser representativos de las tendencias salariales a nivel global. Al generalizar las conclusiones sobre el liderazgo salarial de los Data Scientists y la brecha con
-											otros roles es crucial tener en cuenta este sesgo. Por ejemplo, en otros países con un menor costo de vida o una demanda diferente de profesionales de datos, las 
-											diferencias salariales entre los roles podrían ser menos pronunciadas o incluso presentar un orden distinto.</blockquote></p>
-									</ul>									
-								
-								<p><strong>3. Lenguajes de Programación Favoritos:</strong>
-									<ul>
-										<li>Python es el lenguaje dominante, lo que resalta su importancia en la ciencia de datos.</li><blockquote>La clara preferencia por Python como lenguaje dominante confirma 
-											su rol como herramienta esencial en el análisis de datos, especialmente en el contexto del mercado laboral estadounidense, donde reside la mayoría de los encuestados y
-											donde los Data Scientists lideran en salario. Esta fuerte adopción de Python refuerza la idea de que las habilidades en este lenguaje son altamente valoradas y 
-											probablemente un factor contribuyente a la alta demanda y remuneración de los roles de Data Scientist y Data Engineer.</blockquote>
-										<li>Otros lenguajes como R, C/C++, JavaScript y Java tienen una presencia menor.</li><blockquote>Dependiendo del rol específico y del mercado laboral en otros países, una 
-											comprensión básica o incluso especializada en estos otros lenguajes podría seguir siendo valiosa y ofrecer ventajas competitivas.</blockquote></p>
-									</ul>									
+								<!-- Carrusel de imágenes para Power BI -->
+								<div class="carousel" id="powerbi-carousel">
+									<button class="carousel-btn prev">
+										<span class="icon solid fa-chevron-left"></span>
+									</button>
+									<div class="carousel-images">
+										<img src="images/dashboard-1.png" class="active" alt="Dashboard 1" data-caption="Initial data from survey takers">
+										<img src="images/dashboard-2.png" alt="Dashboard 2" data-caption="Demographic breakdown and average happiness with some aspects">
+										<img src="images/dashboard-3.png" alt="Dashboard 3" data-caption="Industry, preferred language and most wanted aspects in a new job">
+									</div>
+									<button class="carousel-btn next">
+										<span class="icon solid fa-chevron-right"></span>
+									</button>
+									<div class="carousel-caption"></div>
+								</div>
 
-								<p><strong>4.Datos Demográficos:</strong>
-									<ul>
-										<li>La edad promedio de los encuestados es de 30 años.</li>
-										<li>La cantidad de personas encuestadas es de 630.</li>
-										<li>La satisfacción con el equilibrio trabajo/vida es moderada (5.74/10).</li>
-										<li>La satisfacción con el salario es relativamente baja (4.27/10), lo que sugiere posibles problemas de retención.</li>
-										<li>La percepción de dificultad es variada, con una proporción significativa de encuestados que la consideran "Ni fácil ni difícil" o "Difícil".</li>
-									</ul>
-									<blockquote><p>La baja satisfacción salarial contrastada con una satisfacción moderada con el equilibrio trabajo/vida sugiere que, a pesar de un equilibrio trabajo-vida aceptable 
-										para muchos, la compensación económica no está a la altura de las expectativas. Esto, en el contexto de la alta demanda y los salarios líderes de roles como Data Scientist,
-										podría indicar que incluso en roles bien remunerados la satisfacción salarial general no es alta o que la insatisfacción se concentra en roles de menor remuneración. Esta 
-										situación plantea serios riesgos de retención de talento en todos los niveles, ya que la percepción de una compensación inadecuada puede impulsar a los profesionales a buscar
-										mejores oportunidades.</p>
-
-										<p>Además, la variada percepción de dificultad para desempeñar los roles con una proporción significativa considerándolo "Ni fácil ni difícil" o "Difícil", resalta la 
-											necesidad de mejorar el acceso al campo a través de programas de formación más efectivos y la implementación de mentorías. Esto es crucial para cerrar la brecha entre la
-											alta demanda de profesionales de datos y la oferta actual, especialmente considerando que la mayoría de los encuestados se encuentran en una etapa relativamente temprana
-											de su carrera donde el desarrollo profesional y el apoyo son fundamentales.</blockquote></p>
+								<h3><strong><u>Initial data taken from this survey</u></strong></h3>
+								<p>This dashboard provides a snapshot from a mid-2022 survey of over 600 individuals in the data field, revealing that a significant majority, well over half, transitioned from other 
+									careers into data. This underscores the sector's strong draw for professionals seeking new opportunities. Regarding the ease of entering the field, while the largest single group 
+									perceived the difficulty as neutral, a notably larger portion of respondents reported facing challenges breaking in compared to those who found it relatively easy, suggesting that 
+									the path, while popular, isn't without its hurdles for many.</p>
 								
-								<p>Para finalizar la presentación de los hallazgos en este proyecto, es crucial destacar que si bien el panorama salarial muestra una clara valoración del rol del Data Scientist, 
-									impulsada por la demanda y la especialización, existen señales importantes que debemos atender. La satisfacción salarial general relativamente baja a pesar de un equilibrio 
-									trabajo-vida moderado, nos advierte sobre posibles desafíos en la retención de talento incluso en roles de alta remuneración. Además, la percepción de dificultad para ingresar y
-									desempeñarse en el campo subraya la necesidad de fortalecer los programas de formación y mentoría para ampliar la base de profesionales cualificados. Finalmente, la fuerte 
-									influencia del mercado laboral estadounidense en nuestros resultados nos recuerda la importancia de considerar el contexto geográfico al interpretar estas tendencias.</p>
+								<p>Demographically, the survey highlights a striking gender imbalance, with male professionals comprising roughly three-quarters of the respondents. Geographically, while participants 
+									hailed from various parts of the world, there was a pronounced concentration from the United States, which contributed the largest share of participants, with India also showing 
+									strong representation. These characteristics paint a picture of a rapidly evolving field that is a major site of career change, yet one where demographic and geographic concentrations 
+									are quite evident among this surveyed group.</p>
+
+								<h3><strong><u>Breakdown and Average happiness with various aspects</u></strong></h3>
+								<p>The survey respondents in the data field are predominantly young, with a vast majority aged between 20 and 39 years. This youthful demographic is also highly educated; a very large 
+									proportion hold at least a Bachelor's degree, with a significant number having also attained Master's qualifications. In terms of roles, "Data Analyst" emerges as by far the most 
+									common job title, representing a clear majority of participants. Furthermore, a considerable segment of respondents are students or currently seeking employment, which, combined with 
+									the age and common job title, suggests a strong representation of individuals in the earlier stages of their data careers.</p>
 									
-								<p>En resumen, para seguir siendo competitivos y asegurar un crecimiento sostenible en el ámbito de los datos, debemos enfocarnos en estrategias integrales que aborden tanto la 
-									compensación como el desarrollo profesional y el acceso al campo, teniendo en cuenta las particularidades de los diferentes mercados donde operamos o planeamos operar.</p>
+								<p>Regarding compensation, a substantial portion of these professionals report salaries falling within the lower to mid-range brackets presented, which appears consistent with the prevalence 
+									of entry-level to mid-level roles and the younger age profile of the survey takers. When it comes to job satisfaction, the average happiness score reported is below the midpoint of the 
+									provided scale. This suggests a moderate level of overall contentment, indicating that while many are entering and working in the field, there are identifiable areas within their professional 
+									experience, potentially related to factors like salary, learning opportunities, or work-life balance, that could be improved to boost general workplace happiness.</p>
+
+								<h3><strong><u>Respondents industry, preferred language and most wanted aspects in new jobs</u></strong></h3>
+								<p>The survey reveals that data professionals are dispersed across various sectors. A significant portion represents a wide variety of industries where data analysis is actively applied, 
+									such as e-commerce giants like Amazon optimizing supply chains, streaming services such as Netflix personalizing recommendations, or even within sports analytics for enhancing team performance. 
+									Among the more specifically defined sectors from the survey, Technology still stands out as the most common industry, followed by Finance and Healthcare, illustrating the penetration of 
+									data roles beyond traditional tech companies. In terms of technical skills, Python is overwhelmingly the most utilized programming language, with a substantial majority of respondents 
+									favoring it. SQL, while its classification as a full-fledged programming language is sometimes debated, remains a vital skill for data manipulation and retrieval. R, on the other hand, sees 
+									less frequent mainstream usage in the current market compared to Python, though companies often appreciate specialization or experience in this statistically-focused language, particularly in 
+									academic or research-oriented roles.</p>
+
+								<p>When considering new job opportunities, financial incentives are a paramount concern for these data professionals, with "Better Salary" being the most frequently cited important 
+									aspect by a very large margin. Beyond compensation, the desire for "Remote Work" options and a "Good Work/Life Balance" are also highly significant motivators, each being prioritized 
+									by a considerable number of respondents. These preferences underscore a strong inclination towards roles that offer not only competitive pay but also flexibility and personal well-being, 
+									reflecting common contemporary trends in the job market.</p>
+
+								<h3><strong><u>TL;DR</u></strong></h3>
+								<p>This series of information paints a comprehensive picture of individuals navigating the data field in mid-2022. The respondents are largely a young, highly educated demographic, with a 
+									notable proportion having transitioned from other careers, predominantly identifying as male, and often working as Data Analysts. While Python is their primary programming language, 
+									complemented by essential skills in SQL and specialized knowledge in languages like R, they are driven by the pursuit of better salaries and remote work, they also report a moderate 
+									level of overall job satisfaction and perceive the entry into the field as having a notable degree of difficulty. Collectively, these insights from the Power BI presentation highlight 
+									a dynamic and rapidly evolving career landscape, attracting new talent but also presenting distinct challenges and evolving employee expectations across a multitude of industries.</p>
+
 							</article>
 
 						<!-- Contacto -->
 							<article id="contact">
-								<h3 class="major">Contactame utlizando los siguientes links:</h3>
-								
-									<!-- <p><em><a href = https://forms.gle/uDNd6usKzYQhvf9L7>Rellena este Google Form para contactarme por favor. 📄</a></em></p> -->
-									<p> Utiliza estos metodos para contactarme y te ayudare con gusto</p>
+								<h2 class="major">My day to day, updates and projects in:</h2>
 									<ul class="icons">
-										<li><a href="https://www.instagram.com/jdmavod/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="https://www.linkedin.com/in/jdmavod/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-										<li><a href="https://github.com/jdmavod" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-										<li><a href="https://wa.me/584246946768?text=Hola Jonathan,%20me%20gustaria%20saber%20mas%20sobre%20ti%20X" class="icon brands fa-whatsapp"><span class="label">Whatsapp</span></a></li>
+										<li><a href="https://www.instagram.com/jdmavod/" class="icon brands fa-instagram"><span class="label">Instagram</span></a> Instagram</li>
+										<li><a href="https://www.linkedin.com/in/jdmavod/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a> LinkedIn</li>
+										<li><a href="https://github.com/jdmavod" class="icon brands fa-github"><span class="label">GitHub</span></a> GitHub</li>
 										<!-- <li><a href=" correo electronico? " class="icon fas fa-envelope"><span class="label">Correo</span></a></li> -->
 									</ul>								
 							</article>
 
-						<!-- Proyecto Completo ETL Python -->
-							<article id="fullproject">
-								<h3 class="major">ETL Pipeline with Python, Pandas & MS SQL Server</h3>
+						<!-- Insights -->
+							<article id="insights">
+								<h2 class="major">Analysis Results & Technical Insights</h2>
+								<h3><strong><u>Key Insights</u></strong></h3> <p>Through the analysis of the survey data and the Power BI dashboard, several significant patterns and insights 
+									emerged that provide valuable understanding of the tech workforce landscape:</p>
+								<ul>
+									<li><strong>Salary Distribution Patterns:</strong> The data revealed interesting salary variations across different industries and geographical 
+										locations. By converting the original salary ranges to numerical values, we were able to identify clear compensation trends that correlate 
+										with factors such as education level, years of experience, and specific tech roles.</li>
+									<li><strong>Work Satisfaction Correlations:</strong> The survey responses (Question 6 data) showed compelling relationships between different 
+										satisfaction factors. Employees who rated their salary satisfaction highly also tended to report better work-life balance scores, suggesting 
+										these factors are interconnected rather than independent.</li>
+									<li><strong>Career Transition Insights:</strong> The data on career changes revealed patterns about professionals switching to tech roles, 
+										providing insights into the growing trend of career pivots in the technology sector. This information is particularly relevant for 
+										understanding workforce mobility and skill transferability.</li>
+									<li><strong>Industry and Role Distribution:</strong> The analysis uncovered the distribution of respondents across different tech industries 
+										and job roles, highlighting which sectors are most represented and potentially indicating growth areas within the technology field.</li>
+								</ul>
 
-								<!-- <section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0; 
+								<h3><strong><u>Technical Process Learnings</u></strong></h3> <p>The journey from raw CSV data to actionable insights provided valuable lessons in 
+									data analysis best practices:</p>
 
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
+								<ul>
+									<li><strong>Data Type Challenges as Learning Opportunities:</strong> The VARCHAR to INT conversion challenge with salary data taught me that real-world data 
+										rarely comes in perfect formats. This experience reinforced the importance of data profiling and understanding source data thoroughly before designing 
+										target schemas. The solution using Python for data transformation demonstrated how multiple tools can work together in a data pipeline.</li>
+									<li><strong>Tool Selection Strategy:</strong> This project highlighted the strengths of different tools at various stages. Python with Pandas excelled at 
+										initial data exploration and transformation, T-SQL proved powerful for data migration and normalization, and Power BI delivered effective visualization 
+										capabilities. Learning when to leverage each tool's strengths is crucial for efficient data workflows.</li>
+									<li><strong>Verification-First Approach:</strong> Implementing verification SELECT statements before executing UPDATE operations became a cornerstone of my 
+										process. This practice prevented data corruption and built confidence in each migration step. It's a methodology I'll carry forward to all future data projects.</li>
+									<li><strong>Documentation as a Success Factor:</strong> The detailed commenting and documentation throughout the T-SQL scripts proved invaluable not just 
+										for troubleshooting, but for understanding the logic weeks later. Good documentation transforms a one-time script into a reusable, maintainable solution.</li>
+									<li><strong>Incremental Migration Benefits:</strong> Breaking the data migration into logical chunks (personal data, work data, survey responses) made the 
+										process more manageable and reduced risk. When issues arose with one component, other successful migrations remained intact, allowing for targeted problem-solving 
+										rather than starting over.</li>
+								</ul>
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
-
-								<section>
-									<h3 class="major">Lists</h3>
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article> -->
+								<p>These insights represent more than just data points and code solutions—they reflect a comprehensive understanding of both the analytical findings and the 
+									technical journey required to extract meaningful value from raw data.</p>
 
 					</div>
 

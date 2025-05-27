@@ -1,4 +1,4 @@
-**Portfolio done using a template, creators & rights will be found below**
+Portfolio done using a template, creators & rights will be found below
 
 /*
 	Dimension by HTML5 UP

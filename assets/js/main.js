@@ -398,4 +398,73 @@
 						$main._show(location.hash.substr(1), true);
 					});
 
+		// Carrusel para la sección Power BI
+		(function() {
+		var carousel = document.getElementById('powerbi-carousel');
+		if (!carousel) return;
+		var images = carousel.querySelectorAll('.carousel-images img');
+		var current = 0;
+		function showImage(idx) {
+			images.forEach((img, i) => img.classList.toggle('active', i === idx));
+		}
+		carousel.querySelector('.carousel-btn.prev').onclick = function() {
+			current = (current - 1 + images.length) % images.length;
+			showImage(current);
+		};
+		carousel.querySelector('.carousel-btn.next').onclick = function() {
+			current = (current + 1) % images.length;
+			showImage(current);
+		};
+		showImage(current);
+		})();
+
+		(function() {
+		var carousel = document.getElementById('powerbi-carousel');
+		if (!carousel) return;
+		var images = carousel.querySelectorAll('.carousel-images img');
+		var prevBtn = carousel.querySelector('.carousel-btn.prev');
+		var nextBtn = carousel.querySelector('.carousel-btn.next');
+		var caption = carousel.querySelector('.carousel-caption'); // <-- AGREGA ESTA LÍNEA
+		var current = 0;
+		var hideTimeout;
+
+		function showImage(idx) {
+			    images.forEach((img, i) => img.classList.toggle('active', i === idx));
+    // Actualiza el caption
+    if (caption) {
+      caption.textContent = images[idx].getAttribute('data-caption') || '';
+    }
+		}
+
+		// Desvanecer botones
+		function showButtonsTemporarily() {
+			prevBtn.classList.remove('hidden');
+			nextBtn.classList.remove('hidden');
+			clearTimeout(hideTimeout);
+			hideTimeout = setTimeout(function() {
+			prevBtn.classList.add('hidden');
+			nextBtn.classList.add('hidden');
+			}, 1000); // 1 segundo
+		}
+
+		prevBtn.onclick = function() {
+			current = (current - 1 + images.length) % images.length;
+			showImage(current);
+			showButtonsTemporarily();
+		};
+		nextBtn.onclick = function() {
+			current = (current + 1) % images.length;
+			showImage(current);
+			showButtonsTemporarily();
+		};
+
+		// Mostrar flechas al mover el mouse o tocar el carrusel
+		carousel.onmousemove = carousel.ontouchstart = showButtonsTemporarily;
+
+		// Ocultar flechas después de cargar
+		showButtonsTemporarily();
+
+		showImage(current);
+		})();
+
 })(jQuery);

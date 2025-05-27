@@ -68,4 +68,4 @@ UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, LICENSOR OFFERS T
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-**Portfolio done using a template, creators & rights will be found up**
+**Portfolio created used this template from HTML5UP site**
